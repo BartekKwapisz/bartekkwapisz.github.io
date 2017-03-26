@@ -62,21 +62,29 @@ body{
  width: 100%;
 }
 /*---------end of grid framwork--------*/
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .wrapper{
   width:100%;
   height: 100%;
 }
 .header{
- display: flex;
- flex-direction: row;
- justify-content: space-between;
- height:10%;
+  display:flex;
+  height:10%;
 }
 .logo{
   background-color: blue;
+  padding-left: 10%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
 }
 .lang{
   background-color: red;
+  align-items: center
 }
 .container{
   height:80%;
@@ -87,27 +95,27 @@ body{
   flex-wrap: wrap;
   background-color: lime;
 }
-.center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.menu_items{
+  height:35%;
+  width:35%;
+  text-align: center;
+  padding-top: 10%;
 }
 .cv{
   background-color: rgb(112, 244, 244);
-  height:50%;
-
+  margin: 10% 5% 5% 10%;
 }
 .portfolio{
   background-color:  rgb(227, 47, 220);
-  height:50%;
+  margin: 10% 10% 5% 5%;
 }
 .contact{
   background-color: rgb(224, 222, 1);
-  height:50%;
+  margin: 5% 5% 10% 10%;
 }
 .skills{
   background-color:  rgb(162, 249, 52);
-  height:50%;
+  margin: 5% 10% 10% 5%;
 }
 .content{
   background-color: grey;
@@ -123,6 +131,12 @@ body{
   background-color: orange;
 }
 @media all and (max-width: 600px) {
+    .header{
+      height: 10%
+    }
+    .container{
+      height: 70%;
+    }
     .content {
       width: 100%;
       height:80%;
@@ -131,8 +145,21 @@ body{
       width: 100%;
       height: 20%;
     }
-    .contact, .cv, .portfolio, .skills {
+    .menu_items {
       width:25%;
       height:100%;
+      margin:0%;
+      padding-top: 0%;
+    }
+    .info{
+      order:1;
+      width: 100%;
+    }
+    .themes{
+      order:2;
+      width: 100%;
+    }
+    .footer{
+      height:20%;
     }
 }
