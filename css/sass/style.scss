@@ -1,0 +1,185 @@
+//---------style for everything--------
+body,
+html {
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  voice-family: female;
+  richness: 70;
+}
+body{
+  font-family: 'Dosis', sans-serif;
+  font-size: 5vh;
+  color: white;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*---------end of style for everything--------*/
+/*---------grid framwork--------*/
+.row{
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+.col-1{
+ width: 8.33%;
+}
+.col-2{
+ width: 16.66%;
+}
+.col-3{
+ width: 25%;
+}
+.col-4{
+ width: 33.33%;
+}
+.col-5{
+ width: 41.66%;
+}
+.col-6{
+ width: 50%;
+}
+.col-7{
+ width: 58.33%;
+}
+.col-8{
+ width: 66.66%;
+}
+.col-9{
+ width: 75%;
+}
+.col-10{
+ width: 83.33%;
+}
+.col-11{
+ width: 91.66%;
+}
+.col-12{
+ width: 100%;
+}
+/*---------end of grid framwork--------*/
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper{
+  width:100%;
+  height: 100%;
+}
+.header{
+  display:flex;
+  height:10%;
+}
+.logo{
+  background-color: rgb(71, 123, 240);
+  padding-left: 10%;
+  display:flex;
+  align-items: center;
+  letter-spacing: 2vw;
+  font-weight: bold;
+}
+.lang{
+  background-color:  rgb(6, 3, 11);
+}
+.container{
+  height:80%;
+}
+.menu{
+  display:flex;
+  width:50%;
+  flex-wrap: wrap;
+  background-color: rgb(39, 249, 53);
+  font-weight: bold;
+}
+.menu_items{
+  height:35%;
+  width:35%;
+  text-align: center;
+}
+.menu i{
+  font-size: 15vh;
+}
+.cv{
+  background-color: rgb(112, 228, 244);
+  margin: 10% 5% 5% 10%;
+}
+$color: rgb(227, 47, 220);
+.portfolio{
+  background-color:  lighten( $color, 35% );
+  margin: 10% 10% 5% 5%;
+}
+.contact{
+  background-color: rgb(247, 204, 19);
+  margin: 5% 5% 10% 10%;
+}
+.skills{
+  background-color:  rgb(150, 244, 33);
+  margin: 5% 10% 10% 5%;
+}
+.content{
+  background-color: rgb(201, 213, 130);
+}
+.footer{
+  height:10%;
+  display: flex;
+}
+.themes{
+  background-color: brown;
+}
+.info{
+  background-color: rgb(137, 158, 10);
+  display: flex;
+  align-items: center;
+}
+@media all and (max-width: 640px) {
+    .header{
+      height: 10%
+    }
+    .container{
+      height: 70%;
+    }
+    .content {
+      width: 100%;
+      height:80%;
+    }
+    .menu{
+      width: 100%;
+      height: 20%;
+    }
+    .menu_items {
+      width:25%;
+      height:100%;
+      margin:0;
+      padding-top: 0;
+      font-size: 4vh;
+    }
+    .menu i{
+      font-size: 6vh;
+    }
+    .info{
+      order:1;
+      width: 100%;
+    }
+    .themes{
+      order:2;
+      width: 100%;
+    }
+    .footer{
+      height:20%;
+    }
+    .logo{
+      letter-spacing: normal;
+      font-size: 4vh;
+      width:75%;
+      padding-left: 0;
+    }
+    .lang{
+      width:25%;
+    }
+}

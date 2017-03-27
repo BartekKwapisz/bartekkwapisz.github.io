@@ -3,4 +3,7 @@
 .icon-wrench:before { content: '\e801'; } /* '' */
 .icon-vcard:before { content: '\e802'; } /* '' */
 .icon-cogs:before { content: '\e803'; } /* '' */
+.icon-home:before { content: '\e804'; } /* '' */
+.icon-help-circled-alt:before { content: '\e805'; } /* '' */
+.icon-folder-open-empty:before { content: '\f115'; } /* '' */
 .icon-file-code:before { content: '\f1c9'; } /* '' */

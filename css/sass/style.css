@@ -1,22 +1,29 @@
 body,
 html {
-  height: 100%;
   margin: 0;
   padding: 0;
-  width: 100%; }
+  width: 100%;
+  height: 100%;
+  voice-family: female;
+  richness: 70; }
 
 body {
-  color: #fff;
   font-family: 'Dosis', sans-serif;
-  font-size: 5vh; }
+  font-size: 5vh;
+  color: white; }
 
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
   box-sizing: border-box; }
 
+/*---------end of style for everything--------*/
+/*---------grid framwork--------*/
 .row {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  width: 100%; }
+  flex-wrap: wrap; }
 
 .col-1 {
   width: 8.33%; }
@@ -54,104 +61,79 @@ body {
 .col-12 {
   width: 100%; }
 
+/*---------end of grid framwork--------*/
 .center {
-  align-items: center;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
 
 .wrapper {
-  height: 100%;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 .header {
   display: flex;
   height: 10%; }
 
 .logo {
-  align-items: center;
   background-color: #477bf0;
+  padding-left: 10%;
   display: flex;
-  font-weight: bold;
+  align-items: center;
   letter-spacing: 2vw;
-  padding-left: 10%; }
-
-.logo:hover {
-  background-color: #2f6aee; }
-
-.pl {
-  opacity: .8; }
-
-img:hover {
-  opacity: 1; }
+  font-weight: bold; }
 
 .lang {
-  background-color: #06030b;
-  justify-content: space-around; }
-  .lang img {
-    width: 30%; }
+  background-color: #06030b; }
 
 .container {
   height: 80%; }
 
 .menu {
-  background-color: #27f935;
   display: flex;
+  width: 50%;
   flex-wrap: wrap;
-  font-weight: bold;
-  width: 50%; }
-  .menu i {
-    font-size: 15vh; }
+  background-color: #27f935;
+  font-weight: bold; }
 
-.menu-items {
-  display: flex;
-  flex-direction: column;
+.menu_items {
   height: 35%;
-  text-align: center;
-  width: 35%; }
+  width: 35%;
+  text-align: center; }
+
+.menu i {
+  font-size: 15vh; }
 
 .cv {
   background-color: #70e4f4;
   margin: 10% 5% 5% 10%; }
 
 .portfolio {
-  background-color: #e32fdc;
+  background-color: #f8ccf6;
   margin: 10% 10% 5% 5%; }
 
 .contact {
-  background-color: #f9d744;
+  background-color: #f7cc13;
   margin: 5% 5% 10% 10%; }
 
 .skills {
   background-color: #96f421;
   margin: 5% 10% 10% 5%; }
 
-.cv:hover {
-  background-color: #41dbf0; }
-
-.portfolio:hover {
-  background-color: #c51abe; }
-
-.contact:hover {
-  background-color: #f7cc13; }
-
-.skills:hover {
-  background-color: #7cd70b; }
-
 .content {
   background-color: #c9d582; }
 
 .footer {
-  display: flex;
-  height: 10%; }
+  height: 10%;
+  display: flex; }
 
 .themes {
-  background-color: #a52a2a;
-  font-size: 2vw; }
+  background-color: brown; }
 
 .info {
-  align-items: center;
   background-color: #899e0a;
-  display: flex; }
+  display: flex;
+  align-items: center; }
 
 @media all and (max-width: 640px) {
   .header {
@@ -161,19 +143,19 @@ img:hover {
     height: 70%; }
 
   .content {
-    height: 80%;
-    width: 100%; }
+    width: 100%;
+    height: 80%; }
 
   .menu {
-    height: 20%;
-    width: 100%; }
+    width: 100%;
+    height: 20%; }
 
-  .menu-items {
-    font-size: 4vh;
+  .menu_items {
+    width: 25%;
     height: 100%;
     margin: 0;
     padding-top: 0;
-    width: 25%; }
+    font-size: 4vh; }
 
   .menu i {
     font-size: 6vh; }
@@ -190,10 +172,10 @@ img:hover {
     height: 20%; }
 
   .logo {
-    font-size: 4vh;
     letter-spacing: normal;
-    padding-left: 0;
-    width: 75%; }
+    font-size: 4vh;
+    width: 75%;
+    padding-left: 0; }
 
   .lang {
     width: 25%; } }

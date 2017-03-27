@@ -1,0 +1,224 @@
+//---------style for everything--------
+$white: #fff;
+$logo-color: rgb(71, 123, 240);
+$lang-color: rgb(6, 3, 11);
+$menu-color: rgb(39, 249, 53);
+$cv-color: rgb(112, 228, 244);
+$portfolio-color: rgb(227, 47, 220);
+$skills-color: rgb(150, 244, 33);
+$contact-color: rgb(247, 204, 19);
+$content-color: #c9d582;
+$brown: #a52a2a;
+$info-color: rgb(137, 158, 10);
+
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;}
+
+body {
+  color: $white;
+  font-family: 'Dosis', sans-serif;
+  font-size: 5vh;}
+
+* {
+  box-sizing: border-box;
+}
+//end of style for everything
+//-grid framwork
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;}
+
+.col-1 {
+  width: 8.33%;}
+
+.col-2 {
+  width: 16.66%;}
+
+.col-3 {
+  width: 25%;}
+
+.col-4 {
+  width: 33.33%;}
+
+.col-5 {
+  width: 41.66%;}
+
+.col-6 {
+  width: 50%;}
+
+.col-7 {
+  width: 58.33%;}
+
+.col-8 {
+  width: 66.66%;}
+
+.col-9 {
+  width: 75%;}
+
+.col-10 {
+  width: 83.33%;}
+
+.col-11 {
+  width: 91.66%;}
+
+.col-12 {
+  width: 100%;}
+//end of grid framwork
+.center {
+  align-items: center;
+  display: flex;
+  justify-content: center;}
+
+.wrapper {
+  height: 100%;
+  width: 100%;}
+
+.header {
+  display: flex;
+  height: 10%;}
+
+.logo {
+  align-items: center;
+  background-color: $logo-color;
+  display: flex;
+  font-weight: bold;
+  letter-spacing: 2vw;
+  padding-left: 10%;}
+
+.logo:hover {
+  background-color: darken($logo-color, 5%);}
+
+.pl {
+  opacity: .8;
+}
+
+img:hover {
+  opacity: 1;}
+
+.lang {
+  background-color: $lang-color;
+  justify-content: space-around;
+
+  img {
+    width: 30%;
+  }
+  ;}
+
+.container {
+  height: 80%;}
+
+.menu {
+  background-color: $menu-color;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  width: 50%;
+
+  i {
+    font-size: 15vh;}
+  ;}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  height: 35%;
+  text-align: center;
+  width: 35%;}
+
+.cv {
+  background-color: $cv-color;
+  margin: 10% 5% 5% 10%;}
+
+.portfolio {
+  background-color: $portfolio-color;
+  margin: 10% 10% 5% 5%;}
+
+.contact {
+  background-color: lighten($contact-color, 10%);
+  margin: 5% 5% 10% 10%;}
+
+.skills {
+  background-color: $skills-color;
+  margin: 5% 10% 10% 5%;}
+
+.cv:hover {
+  background-color: darken($cv-color, 10%);}
+
+.portfolio:hover {
+  background-color: darken($portfolio-color, 10%);}
+
+.contact:hover {
+  background-color: $contact-color;}
+
+.skills:hover {
+  background-color: darken($skills-color, 10%);
+}
+
+.content {
+  background-color: $content-color;}
+
+.footer {
+  display: flex;
+  height: 10%;}
+
+.themes {
+  background-color: $brown;
+  font-size: 2vw;} //to do zmiany
+
+.info {
+  align-items: center;
+  background-color: $info-color;
+  display: flex;}
+
+@media all and (max-width: 640px) {
+
+  .header {
+    height: 10%;}
+
+  .container {
+    height: 70%;}
+
+  .content {
+    height: 80%;
+    width: 100%;}
+
+  .menu {
+    height: 20%;
+    width: 100%;}
+
+  .menu-items {
+    font-size: 4vh;
+    height: 100%;
+    margin: 0;
+    padding-top: 0;
+    width: 25%;}
+
+  .menu i {
+    font-size: 6vh;}
+
+  .info {
+    order: 1;
+    width: 100%;}
+
+  .themes {
+    order: 2;
+    width: 100%;}
+
+  .footer {
+    height: 20%;}
+
+  .logo {
+    font-size: 4vh;
+    letter-spacing: normal;
+    padding-left: 0;
+    width: 75%;}
+
+  .lang {
+    width: 25%;}
+}
