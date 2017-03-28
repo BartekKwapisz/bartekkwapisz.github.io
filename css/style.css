@@ -69,14 +69,16 @@ body {
 
 .logo {
   align-items: center;
-  background-color: #477bf0;
+  background-color: #506aa3;
   display: flex;
   font-weight: bold;
   letter-spacing: 2vw;
-  padding-left: 10%; }
+  padding-left: 10%;
+  transition: background-color;
+  transition-duration: 300ms; }
 
 .logo:hover {
-  background-color: #2f6aee; }
+  background-color: #485f92; }
 
 .pl {
   opacity: .8; }
@@ -85,7 +87,7 @@ img:hover {
   opacity: 1; }
 
 .lang {
-  background-color: #06030b;
+  background-color: #3b3742;
   justify-content: space-around; }
   .lang img {
     width: 30%; }
@@ -94,7 +96,7 @@ img:hover {
   height: 80%; }
 
 .menu {
-  background-color: #27f935;
+  background-color: #45e777;
   display: flex;
   flex-wrap: wrap;
   font-weight: bold;
@@ -107,6 +109,8 @@ img:hover {
   flex-direction: column;
   height: 35%;
   text-align: center;
+  transition: background-color;
+  transition-duration: 300ms;
   width: 35%; }
 
 .cv {
@@ -126,7 +130,7 @@ img:hover {
   margin: 5% 10% 10% 5%; }
 
 .cv:hover {
-  background-color: #41dbf0; }
+  background-color: #29d7ef; }
 
 .portfolio:hover {
   background-color: #c51abe; }
@@ -141,12 +145,13 @@ img:hover {
   background-color: #c9d582; }
 
 .footer {
-  display: flex;
   height: 10%; }
 
-.themes {
+.settings {
   background-color: #a52a2a;
-  font-size: 2vw; }
+  font-size: 3vw;
+  justify-content: flex-start;
+  display: flex; }
 
 .info {
   align-items: center;
@@ -182,9 +187,10 @@ img:hover {
     order: 1;
     width: 100%; }
 
-  .themes {
+  .settings {
     order: 2;
-    width: 100%; }
+    width: 100%;
+    font-size: 5vh; }
 
   .footer {
     height: 20%; }
@@ -197,5 +203,65 @@ img:hover {
 
   .lang {
     width: 25%; } }
+ol {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 4vh;
+  line-height: 2em;
+  text-align: center; }
+
+ol a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0 5px; }
+
+ol > li {
+  position: relative;
+  float: left;
+  background-color: #a52a2a;
+  width: 150px;
+  height: 100%;
+  transition-duration: 300ms; }
+
+ol span, .settings > span > i {
+  vertical-align: middle; }
+
+ol > li:hover {
+  background-color: #681a1a; }
+
+ol > li:first-child {
+  margin-left: 0; }
+
+ol > li > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 150px;
+  transform: scaleY(0);
+  transition: 250ms;
+  transform-origin: 50% 100%;
+  bottom: 100%; }
+
+ol > li:hover > ul {
+  visibility: visible;
+  transform: scaleY(1);
+  bottom: 100%;
+  max-height: 300px; }
+
+ol > li > ul > li {
+  position: relative;
+  z-index: 10;
+  background-color: #a52a2a;
+  display: block;
+  transition: background-color;
+  transition-duration: 300ms; }
+
+ol > li > ul > li:hover {
+  background-color: #681a1a; }
 
 /*# sourceMappingURL=style.css.map */
