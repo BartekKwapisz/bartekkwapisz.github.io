@@ -1,5 +1,6 @@
 //---------style for everything--------
 $white: #fff;
+$black: #000;
 $logo-color: rgb(80, 106, 163);
 $lang-color: rgb(59, 55, 66);
 $menu-color: rgb(69, 231, 119);
@@ -10,6 +11,8 @@ $contact-color: rgb(247, 204, 19);
 $content-color: #c9d582;
 $brown: #a52a2a;
 $info-color: rgb(137, 158, 10);
+$list-hover-color: #681a1a;
+$my-photo-average: #72635b;
 
 body,
 html {
@@ -24,8 +27,7 @@ body {
   font-size: 5vh;}
 
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box;}
 //end of style for everything
 //-grid framwork
 .row {
@@ -100,8 +102,9 @@ body {
   opacity: .8;
 }
 
-img:hover {
-  opacity: 1;}
+i {
+  text-shadow: 4px 4px 5px $black;}
+
 
 .lang {
   background-color: $lang-color;
@@ -110,7 +113,13 @@ img:hover {
   img {
     width: 30%;
   }
-  ;}
+
+  img:hover {
+    opacity: 1;
+    transition: opacity;
+    transition-duration: 300ms;
+  }
+  }
 
 .container {
   height: 80%;}
@@ -124,7 +133,7 @@ img:hover {
 
   i {
     font-size: 15vh;}
-  ;}
+  }
 
 .menu-items {
   display: flex;
@@ -138,19 +147,19 @@ img:hover {
 
 .cv {
   background-color: $cv-color;
-  margin: 10% 5% 5% 10%;}
+  margin: 8% 5% 2% 10%;}
 
 .portfolio {
   background-color: $portfolio-color;
-  margin: 10% 10% 5% 5%;}
+  margin: 8% 10% 2% 5%;}
 
 .contact {
   background-color: lighten($contact-color, 10%);
-  margin: 5% 5% 10% 10%;}
+  margin: 5% 5% 5% 10%;}
 
 .skills {
   background-color: $skills-color;
-  margin: 5% 10% 10% 5%;}
+  margin: 5% 10% 5% 5%;}
 
 .cv:hover {
   background-color: darken($cv-color, 15%);}
@@ -166,37 +175,104 @@ img:hover {
 }
 
 .content {
-  background-color: $content-color;}
+  display: flex;
+  background-color: $content-color;
+  overflow: auto;
+  width: 50%;}
+
+.content-landing-page {
+  width: 80%;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  background-color: darken($content-color, 15%);
+
+  img:nth-child(2) {
+    display: none;}
+
+  img {
+    border: 5px solid $my-photo-average;
+    float: right;
+    margin-left: 5px;}
+
+  p {
+    display: inline;
+    font-size: 5vh;
+  }
+}
 
 .footer {
   height: 10%;}
 
 .settings {
   background-color: $brown;
-  font-size: 3vw;
-  justify-content:flex-start  ;
   display: flex;
- }
+  font-size: 3vw;
+  justify-content: flex-start;}
 
 .info {
   align-items: center;
-  background-color: $info-color;
-  display: flex;}
+  background-color: darken($content-color, 15%);
+  display: flex;
+  font-size: 4vh;
+
+  &::after{
+    content: 'Click on icons from left panel';
+  }
+
+  i{
+    font-size: 5vh;
+    text-shadow: 2px 2px 3px $black;
+  }
+}
 
 @media all and (max-width: 640px) {
 
   .header {
     height: 10%;}
 
+  .en {
+    display: none;}
+
+  i {
+    text-shadow: 2px 2px 3px $black;}
+
   .container {
-    height: 70%;}
+    height: 80%;}
 
   .content {
-    height: 80%;
+    height: 83%;
     width: 100%;}
 
+    .content-landing-page {
+      width: 100%;
+      height: 90%;
+      padding-left: 10px;
+      padding-bottom: 5px;
+      background-color: darken($content-color, 15%);
+
+      img:first-child {
+        display: none;
+      }
+
+      img:nth-child(2) {
+        display: initial;}
+
+      img {
+        border: 5px solid $my-photo-average;
+        float: right;
+        margin-left: 4px;}
+
+      p {
+        display: inline;
+        font-size: 4vh;
+      }
+    }
+
+
+
+
   .menu {
-    height: 20%;
+    height: 17%;
     width: 100%;}
 
   .menu-items {
@@ -210,17 +286,15 @@ img:hover {
     font-size: 6vh;}
 
   .info {
-    order: 1;
-    width: 100%;}
+  display: none;}
 
   .settings {
-    order: 2;
-    width: 100%;
     font-size: 5vh;
-  }
+    height: 100%;
+    width: 100%;}
 
   .footer {
-    height: 20%;}
+    height: 10%;}
 
   .logo {
     font-size: 4vh;
@@ -230,70 +304,78 @@ img:hover {
 
   .lang {
     width: 25%;}
+
+  .info {
+    &::after{
+      content: 'Click on icons from panel above';}
+  }
 }
 //end of media query
 
 ol {
   display: flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
   font-size: 4vh;
   line-height: 2em;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   text-align: center;
 
-}
-ol a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 0 5px;
-}
-ol > li {
-  position: relative;
-  float: left;
-  background-color: #a52a2a;
-  width: 150px;
-  height: 100%;
-  transition-duration: 300ms;
+  a {
+    color: $white;
+    display: block;
+    padding: 0 5px;
+    text-decoration: none;}
 
+  li {
+    background-color: $brown;
+    float: left;
+    height: 100%;
+    position: relative;
+    transition-duration: 300ms;
+    width: 150px;
+
+    &:first-child {
+      margin-left: 0;}
+
+    &:hover {
+      background-color: $list-hover-color;
+
+      ul {
+        bottom: 100%;
+        max-height: 300px; //this coulde be removed
+        transform: scaleY(1);
+        visibility: visible;}
+    ;}
+
+    ul {
+      bottom: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      transform: scaleY(0);
+      transform-origin: 50% 100%;
+      transition: 250ms;
+      visibility: hidden;
+      width: 150px;
+
+      li {
+        background-color: $brown;
+        display: block;
+        position: relative;
+        transition: background-color;
+        transition-duration: 300ms;
+        z-index: 10;}
+
+        li:hover {
+          background-color: $list-hover-color;}
+
+      }
+  ;}
 }
-ol span, .settings > span > i{
+
+ol span,
+.settings > span > i {
   vertical-align: middle;
-}
-
-ol > li:hover {
-  background-color: #681a1a;
-}
-ol > li:first-child {
-  margin-left: 0;
-}
-ol > li > ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  visibility: hidden;
-  position: absolute;
-  width: 150px;
-  transform: scaleY(0);
-  transition: 250ms;
-  transform-origin: 50% 100%;
-  bottom: 100%;
-}
-ol > li:hover > ul {
-  visibility: visible;
-  transform: scaleY(1);
-  bottom: 100%;
-  max-height: 300px;
-}
-ol > li > ul > li {
-  position: relative;
-  z-index: 10;
-  background-color: #a52a2a;
-  display: block;
-  transition: background-color;
-  transition-duration: 300ms;
-}
-ol > li > ul > li:hover {
-  background-color: #681a1a;
 }
