@@ -11,6 +11,8 @@ body {
   font-size: 5vh; }
 
 * {
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   box-sizing: border-box; }
 
 .row {
@@ -54,6 +56,9 @@ body {
 .col-12 {
   width: 100%; }
 
+.no-display {
+  display: none; }
+
 .center {
   align-items: center;
   display: flex;
@@ -78,6 +83,7 @@ body {
   transition-duration: 300ms; }
 
 .logo:hover {
+  cursor: pointer;
   background-color: #485f92; }
 
 .pl {
@@ -92,6 +98,7 @@ i {
   .lang img {
     width: 30%; }
   .lang img:hover {
+    cursor: pointer;
     opacity: 1;
     transition: opacity;
     transition-duration: 300ms; }
@@ -116,6 +123,9 @@ i {
   transition: background-color;
   transition-duration: 300ms;
   width: 35%; }
+
+.menu-items:hover {
+  cursor: pointer; }
 
 .cv {
   background-color: #70e4f4;
@@ -146,16 +156,17 @@ i {
   background-color: #7cd70b; }
 
 .content {
-  display: flex;
   background-color: #c9d582;
+  display: flex;
   overflow: auto;
   width: 50%; }
 
 .content-landing-page {
-  width: 80%;
-  padding-left: 10px;
+  background-color: #b0c249;
+  box-shadow: 0 8px 6px -6px #000;
   padding-bottom: 5px;
-  background-color: #b0c249; }
+  padding-left: 10px;
+  width: 80%; }
   .content-landing-page img:nth-child(2) {
     display: none; }
   .content-landing-page img {
@@ -165,6 +176,117 @@ i {
   .content-landing-page p {
     display: inline;
     font-size: 5vh; }
+
+.content-cv {
+  background-color: #b0c249;
+  box-shadow: 0 8px 6px -6px #000;
+  height: 93%;
+  overflow: auto;
+  width: 93%; }
+  .content-cv p {
+    font-size: 3vh;
+    margin: 0;
+    padding-left: 10px; }
+  .content-cv a {
+    color: #fff;
+    text-decoration: none; }
+    .content-cv a:hover {
+      text-decoration: underline; }
+
+.content-skills {
+  background-color: #b0c249;
+  box-shadow: 0 8px 6px -6px #000;
+  height: 93%;
+  overflow: auto;
+  width: 93%; }
+  .content-skills p {
+    font-size: 3vh;
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 5px; }
+  .content-skills a {
+    color: #fff;
+    text-decoration: none; }
+    .content-skills a:hover {
+      text-decoration: underline; }
+  .content-skills i {
+    text-shadow: none; }
+
+.content-contact {
+  background-color: #b0c249;
+  box-shadow: 0 8px 6px -6px #000;
+  height: 93%;
+  overflow: auto;
+  width: 93%; }
+  .content-contact p {
+    font-size: 3vh;
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    text-align: center; }
+  .content-contact .content-container {
+    max-width: 90%;
+    width: 100%;
+    margin: 0 auto;
+    position: relative; }
+  .content-contact fieldset {
+    border: none !important;
+    min-width: 100%;
+    padding: 0;
+    width: 100%; }
+  .content-contact #contact input[type="text"], .content-contact #contact input[type="email"], .content-contact #contact input[type="tel"], .content-contact #contact textarea {
+    width: 100%;
+    margin: 0 0 2px;
+    padding: 5px;
+    font-size: 2vh; }
+  .content-contact #contact textarea {
+    min-height: 100px;
+    max-width: 100%;
+    resize: none;
+    margin-top: 13px;
+    -moz-appearance: textfield; }
+  .content-contact #contact button[type="submit"] {
+    cursor: pointer;
+    width: 50%;
+    border: none;
+    background: #c9d582;
+    margin: 13px 25% 10px;
+    padding: 10px;
+    font-size: 3vh;
+    color: #fff; }
+  .content-contact #contact button[type="submit"]:hover {
+    background: #b79606;
+    transition: background-color 0.3s ease-in-out; }
+  .content-contact #contact button[type="submit"]:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+.content-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  background-color: #b0c249;
+  box-shadow: 0 8px 6px -6px #000;
+  justify-content: space-around; }
+  .content-portfolio a {
+    color: #fff;
+    text-decoration: none; }
+  .content-portfolio i {
+    transition: all .2s ease-out;
+    font-size: 11vh; }
+  .content-portfolio i:hover {
+    transform: scale(1.2); }
+  .content-portfolio .portfolio-item {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    margin: 5px;
+    text-align: center;
+    width: 30%; }
+    .content-portfolio .portfolio-item a {
+      display: flex;
+      flex-direction: column;
+      outline: 0; }
 
 .footer {
   height: 10%; }
@@ -202,6 +324,11 @@ i {
   .content {
     height: 83%;
     width: 100%; }
+
+  .content-portfolio {
+    font-size: 4vh; }
+    .content-portfolio i {
+      font-size: 7vh; }
 
   .content-landing-page {
     width: 100%;
@@ -253,10 +380,7 @@ i {
     width: 75%; }
 
   .lang {
-    width: 25%; }
-
-  .info::after {
-    content: 'Click on icons from panel above'; } }
+    width: 25%; } }
 ol {
   display: flex;
   font-size: 4vh;
