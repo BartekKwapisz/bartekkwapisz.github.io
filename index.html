@@ -12,14 +12,13 @@
       <link id="stylesheet" href="css/style.css" rel="stylesheet">
       <link id="stylesheet" href="css/fontello.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Dosis:400,700&amp;subset=latin-ext" rel="stylesheet">
-      <script src="js/basic.js"></script>
   </head>
   <body>
       <div class="wrapper">
           <div class="header row">
-                <div class="logo col-11">
+                <a class="logo col-11">
                   <i class="demo-icon icon-home"></i>&nbsp;Bartłomiej Kwapisz
-                </div>
+                </a>
                 <div class="lang col-1 center">
                   <img src="img/pl.png" alt="zmień język na polski" title="polski" class="pl">
                   <img src="img/uk.png" alt="change language to English" title="English" class="en">
@@ -27,25 +26,25 @@
           </div>
           <div class="container row">
                 <div class="menu col-12">
-                      <div class="cv menu-items">
-                        <i class="demo-icon icon-vcard"></i>
-                        cv
-                      </div>
-                      <div class="portfolio menu-items">
+                      <a class="cv menu-items">
+                            <i class="demo-icon icon-vcard"></i>
+                            cv
+                      </a>
+                      <a class="portfolio menu-items">
                         <i class="demo-icon icon-folder-open-empty"></i>
                         portfolio
-                      </div>
-                      <div class="contact menu-items">
+                      </a>
+                      <a class="contact menu-items">
                         <i class="demo-icon icon-mail"></i>
                         contact
-                      </div>
-                      <div class="skills menu-items">
+                      </a>
+                      <a class="skills menu-items">
                         <i class="demo-icon icon-wrench"></i>
                         skills
-                      </div>
+                      </a>
                 </div>
                 <div class="content col-6 center">
-                    <div class="content-landing-page no-display">
+                    <div class="content-landing-page">
                       <img src="img/bartek.jpg" alt="my photo" />
                       <img src="img/bartek_small.jpg" alt="my photo" />
                         <p>
@@ -81,7 +80,7 @@
                           Age: 28
                         </p>
                     </div>
-                    <div class="content-portfolio">
+                    <div class="content-portfolio no-display">
                       <div class="calculator portfolio-item">
                         <a href = "http://codepen.io/BartekKwapisz/full/WRXzWR/" target="_blank">
                         <i class="demo-icon icon-calculator"></i>
@@ -132,8 +131,8 @@
                         My phone number: 737 675 050 <br />
                         My email: kwapiszbartek@gmail.com<br>
                         </p>
-                        <div class="content-container">
-                            <form id="contact" action="" method="post">
+                        <div class="contact-form-container">
+                            <form id="contact" action="contact.php" method="post">
                                 <fieldset>
                                   <input placeholder="Your name" type="text" tabindex="1"   autofocus>
                                 </fieldset>
@@ -188,24 +187,22 @@
           <div class="footer row">
                 <div class="settings col-6">
                   <span><i class="demo-icon icon-cogs"></i></span>
-
                       <ol>
                           <li><a href="#"><span>themes</span></a>
                               <ul>
-                                  <li><a href="#">pastel</a></li>
+                                  <li><a href="#" class="highlight-active-setting">pastel</a></li>
                                   <li><a href="#">new retro</a></li>
                                   <li><a href="#">carmel</a></li>
                               </ul>
                           </li>
                           <li><a href="#"><span>versions</span></a>
                               <ul>
-                                  <li><a href="#">metro</a></li>
-                                  <li><a href="#">estonia</a></li>
-                                  <li><a href="#">gimmick</a></li>
+                                  <li><a href="#" class="highlight-active-setting">metro</a></li>
+                                  <li><a href="http://bartekkwapisz.co.nf/" target="_blank">estonia</a></li>
+                                  <li><a href="#" target="_blank">gimmick</a></li>
                               </ul>
                           </li>
                       </ol>
-
                 </div>
                 <div class="info col-6">
                 <i class="demo-icon icon-help-circled-alt"></i>
@@ -213,5 +210,6 @@
                 </div>
           </div>
       </div>
+      <script src="js/main.js"></script>
   </body>
 </html>

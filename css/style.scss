@@ -74,8 +74,6 @@ body {
   width: 100%;}
 //end of grid framwork
 
-.no-display{
-  display: none;}
 
 .center {
   align-items: center;
@@ -127,7 +125,7 @@ i {
     transition: opacity;
     transition-duration: 300ms;
   }
-  }
+}
 
 .container {
   height: 80%;}
@@ -151,12 +149,16 @@ i {
   transition: background-color;
   transition-duration: 300ms;
   width: 35%;
+
 }
 
 .menu-items:hover{
   cursor: pointer;
 }
+
+
 .cv {
+  display: flex;
   background-color: $cv-color;
   margin: 8% 5% 2% 10%;}
 
@@ -209,6 +211,7 @@ i {
   p {
     display: inline;
     font-size: 5vh;
+    clear: both;
   }
 }
 
@@ -278,7 +281,7 @@ i {
     text-align: center;
   }
 
-.content-container{
+.contact-form-container{
   max-width:90%;
   width:100%;
   margin:0 auto;
@@ -321,7 +324,7 @@ i {
 
   #contact button[type="submit"]:hover {
 	background: darken($contact-color, 15%);
-	transition:background-color 0.3s ease-in-out;
+	transition: background-color 0.3s ease-in-out;
   }
 
   #contact button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
@@ -408,11 +411,11 @@ i {
     height: 83%;
     width: 100%;}
 
-    .content-portfolio{
-      font-size: 4vh;
-      i {
-        font-size: 7vh;}
-    }
+  .content-portfolio{
+    font-size: 4vh;
+    i {
+      font-size: 7vh;}
+  }
 
     .content-landing-page {
       width: 100%;
@@ -420,6 +423,7 @@ i {
       padding-left: 10px;
       padding-bottom: 5px;
       background-color: darken($content-color, 15%);
+      overflow: auto;
 
       img:first-child {
         display: none;
@@ -437,8 +441,6 @@ i {
         display: inline;
         font-size: 4vh;
       }
-
-
     }
 
   .menu {
@@ -476,7 +478,13 @@ i {
     width: 25%;}
 
 }
-//end of media query
+@media all and (max-width: 332px) {
+  .content-portfolio{
+    height: 100%;
+    overflow: auto;
+  }
+}
+//end of media queries
 
 ol {
   display: flex;
@@ -488,6 +496,7 @@ ol {
   text-align: center;
 
   a {
+    outline: 0;
     color: $white;
     display: block;
     padding: 0 5px;
@@ -545,3 +554,14 @@ ol span,
 .settings > span > i {
   vertical-align: middle;
 }
+
+.highlight-active-setting{
+  color: $contact-color;
+}
+
+.no-display{
+  display: none;}
+
+//jak dodać animację?
+// stackoverflow.com/questions/3331353/transitions-on-the-display-property
+// www.impressivewebs.com/animate-display-block-none/

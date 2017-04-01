@@ -56,9 +56,6 @@ body {
 .col-12 {
   width: 100%; }
 
-.no-display {
-  display: none; }
-
 .center {
   align-items: center;
   display: flex;
@@ -128,6 +125,7 @@ i {
   cursor: pointer; }
 
 .cv {
+  display: flex;
   background-color: #70e4f4;
   margin: 8% 5% 2% 10%; }
 
@@ -175,7 +173,8 @@ i {
     margin-left: 5px; }
   .content-landing-page p {
     display: inline;
-    font-size: 5vh; }
+    font-size: 5vh;
+    clear: both; }
 
 .content-cv {
   background-color: #b0c249;
@@ -225,7 +224,7 @@ i {
     padding-top: 5px;
     padding-bottom: 2px;
     text-align: center; }
-  .content-contact .content-container {
+  .content-contact .contact-form-container {
     max-width: 90%;
     width: 100%;
     margin: 0 auto;
@@ -335,7 +334,8 @@ i {
     height: 90%;
     padding-left: 10px;
     padding-bottom: 5px;
-    background-color: #b0c249; }
+    background-color: #b0c249;
+    overflow: auto; }
     .content-landing-page img:first-child {
       display: none; }
     .content-landing-page img:nth-child(2) {
@@ -381,6 +381,10 @@ i {
 
   .lang {
     width: 25%; } }
+@media all and (max-width: 332px) {
+  .content-portfolio {
+    height: 100%;
+    overflow: auto; } }
 ol {
   display: flex;
   font-size: 4vh;
@@ -390,6 +394,7 @@ ol {
   padding: 0;
   text-align: center; }
   ol a {
+    outline: 0;
     color: #fff;
     display: block;
     padding: 0 5px;
@@ -434,5 +439,11 @@ ol {
 ol span,
 .settings > span > i {
   vertical-align: middle; }
+
+.highlight-active-setting {
+  color: #f7cc13; }
+
+.no-display {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
