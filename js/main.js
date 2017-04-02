@@ -9,30 +9,30 @@ let contentCv = document.querySelector('.content-cv');
 let contentPortfolio = document.querySelector('.content-portfolio');
 let contentSkills = document.querySelector('.content-skills');
 let contentContact = document.querySelector('.content-contact');
-function hideAllOthers(){
-    contentLandingPage.classList.add('no-display');
-    contentCv.classList.add('no-display');
-    contentSkills.classList.add('no-display');
-    contentPortfolio.classList.add('no-display');
-    contentContact.classList.add('no-display');
+let variablesNames = [contentLandingPage,contentCv,contentSkills,contentPortfolio,contentContact];
+function hideAllContentElements(){
+    for( let i = 0, n = variablesNames.length; i < n; i++ ) {
+        variablesNames[i].classList.add('hidden');
+        setTimeout(function () {
+            variablesNames[i].classList.add('no-display');
+        }, 500);
+    }
 }
-home.addEventListener('click', function() {
-    hideAllOthers();
-    contentLandingPage.classList.remove('no-display');
-}, false);
-cv.addEventListener('click', function() {
-    hideAllOthers();
-    contentCv.classList.remove('no-display');
-}, false);
-skills.addEventListener('click', function() {
-    hideAllOthers();
-    contentSkills.classList.remove('no-display');
-}, false);
-portfolio.addEventListener('click', function() {
-    hideAllOthers();
-    contentPortfolio.classList.remove('no-display');
-}, false);
-contact.addEventListener('click', function() {
-    hideAllOthers();
-    contentContact.classList.remove('no-display');
-}, false);
+function showClickedContentElement(clickedName){
+    setTimeout(function () {
+        clickedName.classList.remove('no-display');
+        setTimeout(function () {
+            clickedName.classList.remove('hidden');
+        }, 20);
+    }, 600);
+}
+function eventListeners(){
+    let clickedMenuListenersNames = [home, cv, skills, portfolio, contact];
+    for( let i = 0, n = variablesNames.length; i < n; i++ ) {
+        clickedMenuListenersNames[i].addEventListener('click', function() {
+            hideAllContentElements();
+            showClickedContentElement(variablesNames[i]);
+        }, false);
+    }
+}
+eventListeners();

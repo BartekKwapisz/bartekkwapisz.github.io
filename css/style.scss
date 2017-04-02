@@ -191,7 +191,8 @@ i {
   background-color: $content-color;
   display: flex;
   overflow: auto;
-  width: 50%;}
+  width: 50%;
+}
 
 .content-landing-page {
   background-color: darken($content-color, 15%);
@@ -199,6 +200,7 @@ i {
   padding-bottom: 5px;
   padding-left: 10px;
   width: 80%;
+  transition: all 0.5s linear;
 
   img:nth-child(2) {
     display: none;}
@@ -221,6 +223,7 @@ i {
   height: 93%;
   overflow: auto;
   width: 93%;
+  transition: all 0.5s linear;
 
   p {
     font-size: 3vh;
@@ -244,6 +247,7 @@ i {
   height: 93%;
   overflow: auto;
   width: 93%;
+  transition: all 0.5s linear;
 
   p {
     font-size: 3vh;
@@ -271,6 +275,7 @@ i {
   height: 93%;
   overflow: auto;
   width: 93%;
+  transition: all 0.5s linear;
 
   p {
     font-size: 3vh;
@@ -339,6 +344,7 @@ i {
   background-color: darken($content-color, 15%);
   box-shadow: 0 8px 6px -6px $black;
   justify-content: space-around;
+  transition: all 0.5s linear;
 
   a {
     color: $white;
@@ -561,6 +567,10 @@ ol span,
 
 .no-display{
   display: none;}
+
+.hidden {
+  opacity: 0;
+}
 
 //jak dodać animację?
 // stackoverflow.com/questions/3331353/transitions-on-the-display-property
