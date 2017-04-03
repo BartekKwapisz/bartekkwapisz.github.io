@@ -44,7 +44,7 @@
                       </a>
                 </div>
                 <div class="content col-6 center">
-                    <div class="content-landing-page">
+                    <div class="content-landing-page no-display hidden">
                       <img src="img/bartek.jpg" alt="my photo" />
                       <img src="img/bartek_small.jpg" alt="my photo" />
                         <p>
@@ -160,12 +160,12 @@
                     <div class="content-skills no-display hidden">
                         <p>
                           FRONT-END: <br>
-                          HTML, CSS (Bootstrap, Sass, BEM) <br>
+                          HTML, CSS (Bootstrap*, Sass, BEM*) <br>
                           Java Script (jQuery, AJAX, JSON, regexp) <br>
-                          Bash, Git, Gulp<br>
-                          GIMP, Photoshop <br> <br>
+                          Bash, Git, Gulp*<br>
+                          GIMP*, Photoshop* <br> <br>
                           COURSES: <br>
-                          <a target="_blank" href = 'https://www.freecodecamp.com/bartekkwapisz'>FreeCodeCamp</a>&nbsp;
+                          <a target="_blank" href = 'https://www.freecodecamp.com/bartekkwapisz' id="fcc">FreeCodeCamp</a>&nbsp;
                           <a target="_blank" href = 'https://www.codecademy.com/BartekKwapisz'>Codecademy</a>&nbsp;
                           <a target="_blank" href = 'https://www.khanacademy.org/computing/computer-programming/programming'>Khan Academy</a>&nbsp;
                           <a target="_blank" href = 'https://www.udacity.com/courses/web-development'>Udacity</a> <br>
@@ -188,25 +188,26 @@
                 <div class="settings col-6">
                   <span><i class="demo-icon icon-cogs"></i></span>
                       <ol>
-                          <li><a href="#"><span>themes</span></a>
+                          <li class="themes"><a><span>themes</span></a>
                               <ul>
-                                  <li><a href="#" class="highlight-active-setting">pastel</a></li>
-                                  <li><a href="#">new retro</a></li>
-                                  <li><a href="#">carmel</a></li>
+                                  <li><a class="pastel">pastel</a></li>
+                                  <li><a class="ice">ice</a></li>
+                                  <li><a class="carmel">carmel</a></li>
                               </ul>
                           </li>
-                          <li><a href="#"><span>versions</span></a>
+                          <li class="versions"><a><span>versions</span></a>
                               <ul>
-                                  <li><a href="#" class="highlight-active-setting">metro</a></li>
+                                  <li><a class="metro">metro</a></li>
                                   <li><a href="http://bartekkwapisz.co.nf/" target="_blank">estonia</a></li>
-                                  <li><a href="#" target="_blank">gimmick</a></li>
+                                  <li><a target="_blank">gimmick</a></li>
                               </ul>
                           </li>
                       </ol>
                 </div>
                 <div class="info col-6">
                 <i class="demo-icon icon-help-circled-alt"></i>
-                &nbsp;
+                <span id="changing-information">&nbsp; Click on icons from left panel to change content</span>
+                <!--<button class="btn">Copy page URL</button> button for future gimmick version-->
                 </div>
           </div>
       </div>

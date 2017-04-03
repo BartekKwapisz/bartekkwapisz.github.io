@@ -1,19 +1,19 @@
 //---------style for everything--------
 $white: #fff;
-$black: #000;
-$logo-color: rgb(80, 106, 163);
+$black: #e86f22;
+$logo-color: rgb(250, 194, 27);
 $lang-color: rgb(59, 55, 66);
-$menu-color: rgb(69, 231, 119);
-$cv-color: rgb(112, 228, 244);
-$portfolio-color: rgb(227, 47, 220);
-$skills-color: rgb(150, 244, 33);
-$contact-color: rgb(247, 204, 19);
-$content-color: #c9d582;
-$brown: #a52a2a;
-$info-color: rgb(137, 158, 10);
-$list-hover-color: #681a1a;
-$my-photo-average: #72635b;
-
+$menu-color: #E17C00;
+$cv-color: rgb(215, 245, 33);
+$portfolio-color: rgb(227, 84, 47);
+$skills-color: rgb(19, 30, 40);
+$contact-color: rgb(202, 19, 247);
+$content-color: #505927;
+$brown: #a48a2a;
+$info-color: rgb(10, 158, 87);
+$list-hover-color: #D78A39;
+$my-photo-average: #faa636;
+//#A71B04
 body,
 html {
   height: 100%;
@@ -73,8 +73,10 @@ body {
 .col-12 {
   width: 100%;}
 //end of grid framwork
+
 a {
-  cursor: pointer;}
+  cursor: pointer;
+}
 
 .center {
   align-items: center;
@@ -395,7 +397,7 @@ i {
   }
 
   #changing-information{
-    transition: all .2s linear;
+    transition: all 0.20s linear;
   }
 
 }
@@ -562,8 +564,8 @@ ol span,
   vertical-align: middle;
 }
 
-.pastel, .metro{
-  color: $contact-color;
+.carmel, .metro{
+  color: $cv-color;
 }
 
 .no-display{
@@ -572,7 +574,3 @@ ol span,
 .hidden {
   opacity: 0;
 }
-
-//jak dodać animację?
-// stackoverflow.com/questions/3331353/transitions-on-the-display-property
-// www.impressivewebs.com/animate-display-block-none/

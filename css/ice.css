@@ -6,7 +6,7 @@ html {
   width: 100%; }
 
 body {
-  color: #fff;
+  color: #000000;
   font-family: 'Dosis', sans-serif;
   font-size: 5vh; }
 
@@ -90,10 +90,10 @@ a {
   opacity: .8; }
 
 i {
-  text-shadow: 4px 4px 5px #000; }
+  text-shadow: 4px 4px 5px #afecff; }
 
 .lang {
-  background-color: #3b3742;
+  background-color: #a35078;
   justify-content: space-around; }
   .lang img {
     width: 30%; }
@@ -107,7 +107,7 @@ i {
   height: 80%; }
 
 .menu {
-  background-color: #45e777;
+  background-color: #c3e9cf;
   display: flex;
   flex-wrap: wrap;
   font-weight: bold;
@@ -129,42 +129,42 @@ i {
 
 .cv {
   display: flex;
-  background-color: #70e4f4;
+  background-color: #1e5961;
   margin: 8% 5% 2% 10%; }
 
 .portfolio {
-  background-color: #e32fdc;
+  background-color: #2426c4;
   margin: 8% 10% 2% 5%; }
 
 .contact {
-  background-color: #f9d744;
+  background-color: #f9e179;
   margin: 5% 5% 5% 10%; }
 
 .skills {
-  background-color: #96f421;
+  background-color: #adff99;
   margin: 5% 10% 5% 5%; }
 
 .cv:hover {
-  background-color: #29d7ef; }
+  background-color: #0c2327; }
 
 .portfolio:hover {
-  background-color: #c51abe; }
+  background-color: #1c1e99; }
 
 .contact:hover {
-  background-color: #f7cc13; }
+  background-color: #f7d648; }
 
 .skills:hover {
-  background-color: #7cd70b; }
+  background-color: #84ff66; }
 
 .content {
-  background-color: #c9d582;
+  background-color: #82d597;
   display: flex;
   overflow: auto;
   width: 50%; }
 
 .content-landing-page {
-  background-color: #b0c249;
-  box-shadow: 0 8px 6px -6px #000;
+  background-color: #49c267;
+  box-shadow: 0 8px 6px -6px #afecff;
   padding-bottom: 5px;
   padding-left: 10px;
   width: 80%;
@@ -172,7 +172,7 @@ i {
   .content-landing-page img:nth-child(2) {
     display: none; }
   .content-landing-page img {
-    border: 5px solid #72635b;
+    border: 5px solid #cd4040;
     float: right;
     margin-left: 5px; }
   .content-landing-page p {
@@ -181,8 +181,8 @@ i {
     clear: both; }
 
 .content-cv {
-  background-color: #b0c249;
-  box-shadow: 0 8px 6px -6px #000;
+  background-color: #49c267;
+  box-shadow: 0 8px 6px -6px #afecff;
   height: 93%;
   overflow: auto;
   width: 93%;
@@ -192,14 +192,14 @@ i {
     margin: 0;
     padding-left: 10px; }
   .content-cv a {
-    color: #fff;
+    color: #000000;
     text-decoration: none; }
     .content-cv a:hover {
       text-decoration: underline; }
 
 .content-skills {
-  background-color: #b0c249;
-  box-shadow: 0 8px 6px -6px #000;
+  background-color: #49c267;
+  box-shadow: 0 8px 6px -6px #afecff;
   height: 93%;
   overflow: auto;
   width: 93%;
@@ -210,7 +210,7 @@ i {
     padding-left: 10px;
     padding-top: 5px; }
   .content-skills a {
-    color: #fff;
+    color: #000000;
     text-decoration: none; }
     .content-skills a:hover {
       text-decoration: underline; }
@@ -218,8 +218,8 @@ i {
     text-shadow: none; }
 
 .content-contact {
-  background-color: #b0c249;
-  box-shadow: 0 8px 6px -6px #000;
+  background-color: #49c267;
+  box-shadow: 0 8px 6px -6px #afecff;
   height: 93%;
   overflow: auto;
   width: 93%;
@@ -256,13 +256,13 @@ i {
     cursor: pointer;
     width: 50%;
     border: none;
-    background: #c9d582;
+    background: #82d597;
     margin: 13px 25% 10px;
     padding: 10px;
     font-size: 3vh;
-    color: #fff; }
+    color: #000000; }
   .content-contact #contact button[type="submit"]:hover {
-    background: #b79606;
+    background: #e8be0a;
     transition: background-color 0.3s ease-in-out; }
   .content-contact #contact button[type="submit"]:active {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); }
@@ -271,12 +271,12 @@ i {
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  background-color: #b0c249;
-  box-shadow: 0 8px 6px -6px #000;
+  background-color: #49c267;
+  box-shadow: 0 8px 6px -6px #afecff;
   justify-content: space-around;
   transition: all 0.3s linear; }
   .content-portfolio a {
-    color: #fff;
+    color: #000000;
     text-decoration: none; }
   .content-portfolio i {
     transition: all .2s ease-out;
@@ -299,21 +299,21 @@ i {
   height: 10%; }
 
 .settings {
-  background-color: #a52a2a;
+  background-color: #e0faf6;
   display: flex;
   font-size: 3vw;
   justify-content: flex-start; }
 
 .info {
   align-items: center;
-  background-color: #b0c249;
+  background-color: #49c267;
   display: flex;
   font-size: 3vh; }
   .info i {
     font-size: 5vh;
-    text-shadow: 2px 2px 3px #000; }
+    text-shadow: 2px 2px 3px #afecff; }
   .info #changing-information {
-    transition: all .2s linear; }
+    transition: all 0.20s linear; }
 
 @media all and (max-width: 640px) {
   .header {
@@ -323,7 +323,7 @@ i {
     display: none; }
 
   i {
-    text-shadow: 2px 2px 3px #000; }
+    text-shadow: 2px 2px 3px #afecff; }
 
   .container {
     height: 80%; }
@@ -342,14 +342,14 @@ i {
     height: 90%;
     padding-left: 10px;
     padding-bottom: 5px;
-    background-color: #b0c249;
+    background-color: #49c267;
     overflow: auto; }
     .content-landing-page img:first-child {
       display: none; }
     .content-landing-page img:nth-child(2) {
       display: initial; }
     .content-landing-page img {
-      border: 5px solid #72635b;
+      border: 5px solid #cd4040;
       float: right;
       margin-left: 4px; }
     .content-landing-page p {
@@ -403,12 +403,12 @@ ol {
   text-align: center; }
   ol a {
     outline: 0;
-    color: #fff;
+    color: #000000;
     display: block;
     padding: 0 5px;
     text-decoration: none; }
   ol li {
-    background-color: #a52a2a;
+    background-color: #e0faf6;
     float: left;
     height: 100%;
     position: relative;
@@ -417,7 +417,7 @@ ol {
     ol li:first-child {
       margin-left: 0; }
     ol li:hover {
-      background-color: #681a1a; }
+      background-color: #ff8282; }
       ol li:hover ul {
         bottom: 100%;
         max-height: 300px;
@@ -435,21 +435,21 @@ ol {
       visibility: hidden;
       width: 150px; }
       ol li ul li {
-        background-color: #a52a2a;
+        background-color: #e0faf6;
         display: block;
         position: relative;
         transition: background-color;
         transition-duration: 300ms;
         z-index: 10; }
       ol li ul li:hover {
-        background-color: #681a1a; }
+        background-color: #ff8282; }
 
 ol span,
 .settings > span > i {
   vertical-align: middle; }
 
-.pastel, .metro {
-  color: #f7cc13; }
+.ice, .metro {
+  color: #1300ab; }
 
 .no-display {
   display: none; }
@@ -457,4 +457,4 @@ ol span,
 .hidden {
   opacity: 0; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=ice.css.map */

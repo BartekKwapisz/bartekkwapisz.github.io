@@ -1,18 +1,18 @@
 //---------style for everything--------
-$white: #fff;
-$black: #000;
+$white: #000000;
+$black: #afecff;
 $logo-color: rgb(80, 106, 163);
-$lang-color: rgb(59, 55, 66);
-$menu-color: rgb(69, 231, 119);
-$cv-color: rgb(112, 228, 244);
-$portfolio-color: rgb(227, 47, 220);
-$skills-color: rgb(150, 244, 33);
-$contact-color: rgb(247, 204, 19);
-$content-color: #c9d582;
-$brown: #a52a2a;
+$lang-color: rgb(163, 80, 120);
+$menu-color: rgb(195, 233, 207);
+$cv-color: rgb(30, 89, 97);
+$portfolio-color: rgb(36, 38, 196);
+$skills-color: rgb(173, 255, 153);
+$contact-color: rgb(247, 214, 72);
+$content-color: #82d597;
+$brown: #e0faf6;
 $info-color: rgb(137, 158, 10);
-$list-hover-color: #681a1a;
-$my-photo-average: #72635b;
+$list-hover-color: #ff8282;
+$my-photo-average: #cd4040;
 
 body,
 html {
@@ -73,8 +73,10 @@ body {
 .col-12 {
   width: 100%;}
 //end of grid framwork
+
 a {
-  cursor: pointer;}
+  cursor: pointer;
+}
 
 .center {
   align-items: center;
@@ -395,7 +397,7 @@ i {
   }
 
   #changing-information{
-    transition: all .2s linear;
+    transition: all 0.20s linear;
   }
 
 }
@@ -562,8 +564,8 @@ ol span,
   vertical-align: middle;
 }
 
-.pastel, .metro{
-  color: $contact-color;
+.ice, .metro{
+  color: rgb(19, 0, 171);
 }
 
 .no-display{
