@@ -1,179 +1,309 @@
 'use strict';
-let home = document.querySelector('.logo');
-let pl = document.querySelector('.pl');
-let info = document.querySelector('#changing-information');
-let freeCodeCamp = document.querySelector('#fcc');
-let cv = document.querySelector('.cv');
-let skills = document.querySelector('.skills');
-let portfolio = document.querySelector('.portfolio');
-let calculator = document.querySelector('.calculator');
-let simon = document.querySelector('.simon');
-let XorO = document.querySelector('.XorO');
-let git = document.querySelector('.git');
-let codewars = document.querySelector('.codewars');
-let codepen = document.querySelector('.codepen');
-let natfit = document.querySelector('.natfit');
-let legume = document.querySelector('.legume');
-let psd = document.querySelector('.psd');
-let contact = document.querySelector('.contact');
-let contentLandingPage = document.querySelector('.content-landing-page');
-let contentCv = document.querySelector('.content-cv');
-let contentPortfolio = document.querySelector('.content-portfolio');
-let contentSkills = document.querySelector('.content-skills');
-let contentContact = document.querySelector('.content-contact');
-let themes = document.querySelector('.themes');
-let versions = document.querySelector('.versions');
-let pastel = document.querySelector('.pastel');
-let carmel = document.querySelector('.carmel');
-let ice = document.querySelector('.ice');
-let variablesNames = [contentLandingPage,contentCv,contentSkills,contentPortfolio,contentContact];
-function hideAllContentElements(){
-    for( let i = 0, n = variablesNames.length; i < n; i++ ) {
-        variablesNames[i].classList.add('hidden');
-        setTimeout(function () {
-            variablesNames[i].classList.add('no-display');
-        }, 300);
-    }
-}
-function showClickedContentElement(clickedName){
-    setTimeout(function () {
-        clickedName.classList.remove('no-display');
-        setTimeout(function () {
-            clickedName.classList.remove('hidden');
-        }, 20);
-    }, 350);
-}
-// function eventListeners(){
-//     let clickedMenuListenersNames = [home, cv, skills, portfolio, contact];
-//     for( let i = 0, n = variablesNames.length; i < n; i++ ) {
-//         clickedMenuListenersNames[i].addEventListener('click', function() {
-//             hideAllContentElements();
-//             showClickedContentElement(variablesNames[i]);
-//         }, false);
-//     }
-// }
-// eventListeners();
-function reactToBrowserButtons(){
-    if(window.location.hash === '#home' || window.location.hash === '') {
-        hideAllContentElements();
-        showClickedContentElement(contentLandingPage);
-        changeInfoOnHover('Click on icons from left panel to change content');
-    }
-    else if(window.location.hash === '#cv') {
-        hideAllContentElements();
-        showClickedContentElement(contentCv);
-        changeInfoOnHover('You may find some links in cv text');
-    }
-    else if(window.location.hash === '#portfolio') {
-        hideAllContentElements();
-        showClickedContentElement(contentPortfolio);
-        changeInfoOnHover('Click on icons to open new window');
-    }
-    else if(window.location.hash === '#contact') {
-        hideAllContentElements();
-        showClickedContentElement(contentContact);
-        changeInfoOnHover('Right now form is disabled');
-    }
-    else if(window.location.hash === '#skills') {
-        hideAllContentElements();
-        showClickedContentElement(contentSkills);
-        changeInfoOnHover('* means I use it rarely');
-    }
-}
-window.addEventListener('hashchange', reactToBrowserButtons);
-window.onload = reactToBrowserButtons;
-
-home.addEventListener('click', function() {
-    window.location.hash = 'home'; //może to zmień na window.location.href na serwerze
-}, false);
-cv.addEventListener('click', function() {
-    window.location.hash = 'cv';
-}, false);
-skills.addEventListener('click', function() {
-    window.location.hash = 'skills';
-}, false);
-portfolio.addEventListener('click', function() {
-    window.location.hash = 'portfolio';
-}, false);
-contact.addEventListener('click', function() {
-    window.location.hash = 'contact';
-}, false);
-freeCodeCamp.addEventListener('mouseover', function() {
-    changeInfoOnHover('Now push "F" button to see my Front End Certificate');
-    window.onkeyup = function(e) {
-        var key = e.keyCode ? e.keyCode : e.which;
-        if (key == 70) {
-            window.open('https://www.freecodecamp.com/bartekkwapisz/front-end-certification');
+let isPolish = false;
+function runEverything(){
+    let home = document.querySelector('.logo');
+    let pl = document.querySelector('.pl');
+    let en = document.querySelector('.en');
+    let info = document.querySelector('#changing-information');
+    let freeCodeCamp = document.querySelector('#fcc');
+    let cv = document.querySelector('.cv');
+    let skills = document.querySelector('.skills');
+    let portfolio = document.querySelector('.portfolio');
+    let calculator = document.querySelector('.calculator');
+    let simon = document.querySelector('.simon');
+    let XorO = document.querySelector('.XorO');
+    let git = document.querySelector('.git');
+    let codewars = document.querySelector('.codewars');
+    let codepen = document.querySelector('.codepen');
+    let natfit = document.querySelector('.natfit');
+    let legume = document.querySelector('.legume');
+    let psd = document.querySelector('.psd');
+    let contact = document.querySelector('.contact');
+    let contentLandingPage = document.querySelector('.content-landing-page');
+    let contentCv = document.querySelector('.content-cv');
+    let contentPortfolio = document.querySelector('.content-portfolio');
+    let contentSkills = document.querySelector('.content-skills');
+    let contentContact = document.querySelector('.content-contact');
+    let themes = document.querySelector('.themes');
+    let versions = document.querySelector('.versions');
+    let pastel = document.querySelector('.pastel');
+    let carmel = document.querySelector('.carmel');
+    let ice = document.querySelector('.ice');
+    let gimmick = document.querySelector('.gimmick');
+    let wrapper = document.querySelector('.wrapper');
+    let XHR = null;
+    let variablesNames = [contentLandingPage,contentCv,contentSkills,contentPortfolio,contentContact];
+    function hideAllContentElements(){
+        for( let i = 0, n = variablesNames.length; i < n; i++ ) {
+            variablesNames[i].classList.add('hidden');
+            setTimeout(function () {
+                variablesNames[i].classList.add('no-display');
+            }, 300);
         }
-    };
-}, false);
-freeCodeCamp.addEventListener('mouseout', function() {
-    changeInfoOnHover('* means I use it rarely');
-    window.onkeyup = null;
-}, false);
-calculator.addEventListener('mouseover', function() {
-    changeInfoOnHover('Calculator for Free Code Camp projects');
-}, false);
-simon.addEventListener('mouseover', function() {
-    changeInfoOnHover('Simon Game for Free Code Camp projects');
-}, false);
-XorO.addEventListener('mouseover', function() {
-    changeInfoOnHover('Tic tac toe game for Free Code Camp projects');
-}, false);
-git.addEventListener('mouseover', function() {
-    changeInfoOnHover('My GitHub profile');
-}, false);
-codewars.addEventListener('mouseover', function() {
-    changeInfoOnHover('My Codewars profile');
-}, false);
-codepen.addEventListener('mouseover', function() {
-    changeInfoOnHover('My CodePen profile');
-}, false);
-natfit.addEventListener('mouseover', function() {
-    changeInfoOnHover('Siple site for friend (2016)');
-}, false);
-legume.addEventListener('mouseover', function() {
-    changeInfoOnHover('Funny site for dad (2014)');
-}, false);
-psd.addEventListener('mouseover', function() {
-    changeInfoOnHover('Some PSD files converted to HTML and CSS sites');
-}, false);
-contentPortfolio.addEventListener('mouseout', function() {
-    changeInfoOnHover('Click on icons to open new window');
-}, false);
-pl.addEventListener('mouseover', function() {
-    changeInfoOnHover('Switch language to Polish (zmień język na polski)');
-}, false);
-pl.addEventListener('mouseout', function() {
-    changeInfoOnHover('Click on icons from left panel to change content');
-}, false);
-themes.addEventListener('mouseenter', function() {
-    changeInfoOnHover('Change site appearance');
-}, false);
-themes.addEventListener('mouseleave', function() {
-    changeInfoOnHover('Click on icons from left panel to change content');
-}, false);
-versions.addEventListener('mouseenter', function() {
-    changeInfoOnHover('Go to other version of porftolio page');
-}, false);
-versions.addEventListener('mouseleave', function() {
-    changeInfoOnHover('Click on icons from left panel to change content');
-}, false);
-function changeInfoOnHover(text){
-    info.classList.add('hidden');
-    setTimeout(function () {
-        info.textContent = text;
-    }, 200);
-    setTimeout(function () {
-        info.classList.remove('hidden');
-    }, 400);
+    }
+    function showClickedContentElement(clickedName){
+        setTimeout(function () {
+            clickedName.classList.remove('no-display');
+            setTimeout(function () {
+                clickedName.classList.remove('hidden');
+            }, 20);
+        }, 350);
+    }
+    function changeInfoOnHover(text){
+        info.classList.add('hidden');
+        setTimeout(function () {
+            info.textContent = text;
+        }, 200);
+        setTimeout(function () {
+            info.classList.remove('hidden');
+        }, 400);
+    }
+    function reactToBrowserButtons(){
+        if(window.location.hash === '#home' || window.location.hash === '') {
+            hideAllContentElements();
+            showClickedContentElement(contentLandingPage);
+            if(!isPolish)
+                changeInfoOnHover('Click on tiles from left panel to change content');
+            if(isPolish)
+                changeInfoOnHover('Użyj kafelków w lewym panelu do nawigacji');
+        }
+        else if(window.location.hash === '#cv') {
+            hideAllContentElements();
+            showClickedContentElement(contentCv);
+            if(!isPolish)
+                changeInfoOnHover('You may find some links in cv text');
+            if(isPolish)
+                changeInfoOnHover('W tekście cv odnajdziesz kilka linków');
+        }
+        else if(window.location.hash === '#portfolio') {
+            hideAllContentElements();
+            showClickedContentElement(contentPortfolio);
+            if(!isPolish)
+                changeInfoOnHover('Click on icons to open new window');
+            if(isPolish)
+                changeInfoOnHover('Kliknij ikony by otworzyć link w nowym oknie');
+        }
+        else if(window.location.hash === '#contact') {
+            hideAllContentElements();
+            showClickedContentElement(contentContact);
+            if(!isPolish)
+                changeInfoOnHover('Right now form is disabled');
+            if(isPolish)
+                changeInfoOnHover('Póki co formularz nie działa');
+        }
+        else if(window.location.hash === '#skills') {
+            hideAllContentElements();
+            showClickedContentElement(contentSkills);
+            if(!isPolish)
+                changeInfoOnHover('* means I use it rarely');
+            if(isPolish)
+                changeInfoOnHover('* oznacza, że rzadko tego używałem');
+        }
+    }
+    reactToBrowserButtons();
+    window.addEventListener('hashchange', reactToBrowserButtons);
+    home.addEventListener('click', function() {
+        if (window.location.hash !== '')
+            window.location.hash = 'home'; //może to zmień na window.location.href na serwerze
+    }, false);
+    cv.addEventListener('click', function() {
+        window.location.hash = 'cv';
+    }, false);
+    skills.addEventListener('click', function() {
+        window.location.hash = 'skills';
+    }, false);
+    portfolio.addEventListener('click', function() {
+        window.location.hash = 'portfolio';
+    }, false);
+    contact.addEventListener('click', function() {
+        window.location.hash = 'contact';
+    }, false);
+    freeCodeCamp.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('Now push "F" button to show my Front End Certificate');
+        if(isPolish)
+            changeInfoOnHover('Naciśnij "F" by wyświetlić certyfikat');
+        window.onkeyup = function(e) {
+            var key = e.keyCode ? e.keyCode : e.which;
+            if (key == 70) {
+                window.open('https://www.freecodecamp.com/bartekkwapisz/front-end-certification');
+            }
+        };
+    }, false);
+    freeCodeCamp.addEventListener('mouseout', function() {
+        if(!isPolish)
+            changeInfoOnHover('* means I use it rarely');
+        if(isPolish)
+            changeInfoOnHover('* oznacza, że rzadko tego używałem');
+        window.onkeyup = null;
+    }, false);
+    calculator.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('Calculator for Free Code Camp projects');
+        if(isPolish)
+            changeInfoOnHover('Kalkulator przygotowany w ramach kursu Free Code Camp');
+    }, false);
+    simon.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('Simon Game for Free Code Camp projects');
+        if(isPolish)
+            changeInfoOnHover('Gra "Simon" przygotowana w ramach kursu Free Code Camp');
+    }, false);
+    XorO.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('Tic tac toe game for Free Code Camp projects');
+        if(isPolish)
+            changeInfoOnHover('Gra "Kółko i krzyżyk" przygotowana w ramach kursu Free Code Camp');
+    }, false);
+    git.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('My GitHub profile');
+        if(isPolish)
+            changeInfoOnHover('Mój profil GitHub');
+    }, false);
+    codewars.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('My Codewars profile');
+        if(isPolish)
+            changeInfoOnHover('Mój profil Codewars');
+    }, false);
+    codepen.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('My CodePen profile');
+        if(isPolish)
+            changeInfoOnHover('Mój profil CodePen');
+    }, false);
+    natfit.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('Siple site for friend (2016)');
+        if(isPolish)
+            changeInfoOnHover('Prosta strona napisana dla kolegi w grudniu 2016');
+    }, false);
+    legume.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover("Funny site for dad's kiosk (2014)");
+        if(isPolish)
+            changeInfoOnHover('Zabawna strona dla sklepu taty');
+    }, false);
+    psd.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('Some PSD files sliced to HTML and CSS sites');
+        if(isPolish)
+            changeInfoOnHover('Pliki PSD "pocięte" do HTML i CSS');
+    }, false);
+    contentPortfolio.addEventListener('mouseout', function() {
+        if(!isPolish)
+            changeInfoOnHover('Click on icons to open new window');
+        if(isPolish)
+            changeInfoOnHover('Kliknij ikony by otworzyć link w nowym oknie');
+    }, false);
+    pl.addEventListener('click', function() {
+        isPolish = true;
+        changeInfoOnHover('Użyj kafelków w lewym panelu do nawigacji');
+        fireAjax('html/pl.html');
+    }, false);
+    pl.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('Switch language to Polish (zmień język na polski)');
+    }, false);
+    pl.addEventListener('mouseout', function() {
+        if(!isPolish)
+            changeInfoOnHover('Click on tiles from left panel to change content');
+    }, false);
+    en.addEventListener('click', function() {
+        isPolish = false;
+        changeInfoOnHover('Click on tiles from left panel to change content');
+        fireAjax('html/en.html');
+    }, false);
+    en.addEventListener('mouseover', function() {
+        if(isPolish)
+            changeInfoOnHover('Switch language to English (zmień język na angielski)');
+    }, false);
+    en.addEventListener('mouseout', function() {
+        if(isPolish)
+            changeInfoOnHover('Użyj kafelków w lewym panelu do nawigacji');
+    }, false);
+    themes.addEventListener('mouseenter', function() {
+        if(!isPolish)
+            changeInfoOnHover('Change site appearance');
+        if(isPolish)
+            changeInfoOnHover('Zmień wygląd strony');
+    }, false);
+    themes.addEventListener('mouseleave', function() {
+        if(!isPolish)
+            changeInfoOnHover('Click on tiles from left panel to change content');
+        if(isPolish)
+            changeInfoOnHover('Użyj kafelków w lewym panelu do nawigacji');
+    }, false);
+    versions.addEventListener('mouseenter', function() {
+        if(!isPolish)
+            changeInfoOnHover('Go to other version of porftolio page');
+        if(isPolish)
+            changeInfoOnHover('Przejdź do innej wersji portfolio');
+    }, false);
+    versions.addEventListener('mouseleave', function() {
+        if(!isPolish)
+            changeInfoOnHover('Click on tiles from left panel to change content');
+        if(isPolish)
+            changeInfoOnHover('Użyj kafelków w lewym panelu do nawigacji');
+    }, false);
+    gimmick.addEventListener('click', function() {
+        if(!isPolish)
+            changeInfoOnHover('This version is under construction, come back later');
+        if(isPolish)
+            changeInfoOnHover('Ta wersja dopiero powstaje, wróć później');
+    }, false);
+    gimmick.addEventListener('mouseleave', function() {
+        if(!isPolish)
+            changeInfoOnHover('Click on tiles from left panel to change content');
+        if(isPolish)
+            changeInfoOnHover('Użyj kafelków w lewym panelu do nawigacji');
+    }, false);
+    carmel.addEventListener('click', function() {
+        document.getElementById('stylesheet').href = 'css/carmel.css';
+    }, false);
+    ice.addEventListener('click', function() {
+        document.getElementById('stylesheet').href = 'css/ice.css';
+    }, false);
+    pastel.addEventListener('click', function() {
+        document.getElementById('stylesheet').href = 'css/style.css';
+    }, false);
+    function ajaxInit(){
+        try{
+            XHR = new XMLHttpRequest();
+        }
+        catch(e){
+            try {
+                XHR = new ActiveXObject('Msxml2.XMLHTTP');
+            }
+            catch(e2){
+                try{
+                    XHR = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+                catch(e3){
+                    alert('Browser without AJAX');
+                }
+            }
+        }
+        return XHR;
+    }
+    function fireAjax(URL){
+        XHR = ajaxInit();
+        if(XHR != null){
+            XHR.open('GET', URL, true);
+            XHR.onreadystatechange = function(){
+                if (XHR.readyState == 4){
+                    if(XHR.status === 200){
+                        wrapper.innerHTML = XHR.responseText;
+                        runEverything();
+                    }
+                    else {
+                        alert('Error - cannot load data');
+                    }
+                }
+            };
+            XHR.send(null);
+        }
+    }
 }
-carmel.addEventListener('click', function() {
-    document.getElementById('stylesheet').href = 'css/carmel.css';
-}, false);
-ice.addEventListener('click', function() {
-    document.getElementById('stylesheet').href = 'css/ice.css';
-}, false);
-pastel.addEventListener('click', function() {
-    document.getElementById('stylesheet').href = 'css/style.css';
-}, false);
+window.onload = runEverything;

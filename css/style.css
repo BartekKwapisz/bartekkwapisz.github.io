@@ -86,9 +86,6 @@ a {
   cursor: pointer;
   background-color: #485f92; }
 
-.pl {
-  opacity: .8; }
-
 i {
   text-shadow: 4px 4px 5px #000; }
 
@@ -102,6 +99,9 @@ i {
     opacity: 1;
     transition: opacity;
     transition-duration: 300ms; }
+
+.opacity08 {
+  opacity: .8; }
 
 .container {
   height: 80%; }
@@ -319,7 +319,7 @@ i {
   .header {
     height: 10%; }
 
-  .en {
+  .hideOnSmallerScreen {
     display: none; }
 
   i {
