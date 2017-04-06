@@ -6,7 +6,7 @@ html {
   width: 100%; }
 
 body {
-  color: #000000;
+  color: #000;
   font-family: 'Dosis', sans-serif;
   font-size: 5vh; }
 
@@ -74,7 +74,7 @@ a {
 
 .logo {
   align-items: center;
-  background-color: #506aa3;
+  background-color: #6096ba;
   display: flex;
   font-weight: bold;
   letter-spacing: 2vw;
@@ -84,7 +84,7 @@ a {
 
 .logo:hover {
   cursor: pointer;
-  background-color: #485f92; }
+  background-color: #4e8ab2; }
 
 .pl {
   opacity: .8; }
@@ -107,7 +107,7 @@ i {
   height: 80%; }
 
 .menu {
-  background-color: #c3e9cf;
+  background: radial-gradient(circle, #ecf5ef, #85c398);
   display: flex;
   flex-wrap: wrap;
   font-weight: bold;
@@ -120,7 +120,7 @@ i {
   flex-direction: column;
   height: 35%;
   text-align: center;
-  transition: background-color;
+  transition: background;
   transition-duration: 300ms;
   width: 35%; }
 
@@ -129,42 +129,40 @@ i {
 
 .cv {
   display: flex;
-  background-color: #1e5961;
+  background: linear-gradient(145deg, #1e5961, #c4e8ed);
   margin: 8% 5% 2% 10%; }
 
 .portfolio {
-  background-color: #2426c4;
+  background: linear-gradient(225deg, #2426c4, #c0c1f4);
   margin: 8% 10% 2% 5%; }
 
 .contact {
-  background-color: #f9e179;
+  background: linear-gradient(45deg, #f7d648, #fbecaa);
   margin: 5% 5% 5% 10%; }
 
 .skills {
-  background-color: #adff99;
+  background: linear-gradient(315deg, #7dd169, #c1e9b7);
   margin: 5% 10% 5% 5%; }
 
 .cv:hover {
-  background-color: #0c2327; }
+  background: linear-gradient(145deg, #0c2327, #c4e8ed); }
 
 .portfolio:hover {
-  background-color: #1c1e99; }
+  background: linear-gradient(225deg, #181983, #ececfb); }
 
 .contact:hover {
-  background-color: #f7d648; }
+  background: linear-gradient(45deg, #e8be0a, #fdf7db); }
 
 .skills:hover {
-  background-color: #84ff66; }
+  background: linear-gradient(315deg, #50b638, #e2f5de); }
 
 .content {
-  background-color: #82d597;
+  background: radial-gradient(circle, #ecf5ef, #85c398);
   display: flex;
   overflow: auto;
   width: 50%; }
 
 .content-landing-page {
-  background-color: #49c267;
-  box-shadow: 0 8px 6px -6px #afecff;
   padding-bottom: 5px;
   padding-left: 10px;
   width: 80%;
@@ -181,8 +179,6 @@ i {
     clear: both; }
 
 .content-cv {
-  background-color: #49c267;
-  box-shadow: 0 8px 6px -6px #afecff;
   height: 93%;
   overflow: auto;
   width: 93%;
@@ -192,14 +188,12 @@ i {
     margin: 0;
     padding-left: 10px; }
   .content-cv a {
-    color: #000000;
+    color: #000;
     text-decoration: none; }
     .content-cv a:hover {
       text-decoration: underline; }
 
 .content-skills {
-  background-color: #49c267;
-  box-shadow: 0 8px 6px -6px #afecff;
   height: 93%;
   overflow: auto;
   width: 93%;
@@ -210,7 +204,7 @@ i {
     padding-left: 10px;
     padding-top: 5px; }
   .content-skills a {
-    color: #000000;
+    color: #000;
     text-decoration: none; }
     .content-skills a:hover {
       text-decoration: underline; }
@@ -218,8 +212,6 @@ i {
     text-shadow: none; }
 
 .content-contact {
-  background-color: #49c267;
-  box-shadow: 0 8px 6px -6px #afecff;
   height: 93%;
   overflow: auto;
   width: 93%;
@@ -260,7 +252,7 @@ i {
     margin: 13px 25% 10px;
     padding: 10px;
     font-size: 3vh;
-    color: #000000; }
+    color: #000; }
   .content-contact #contact button[type="submit"]:hover {
     background: #e8be0a;
     transition: background-color 0.3s ease-in-out; }
@@ -271,12 +263,10 @@ i {
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  background-color: #49c267;
-  box-shadow: 0 8px 6px -6px #afecff;
   justify-content: space-around;
   transition: all 0.3s linear; }
   .content-portfolio a {
-    color: #000000;
+    color: #000;
     text-decoration: none; }
   .content-portfolio i {
     transition: all .2s ease-out;
@@ -403,7 +393,7 @@ ol {
   text-align: center; }
   ol a {
     outline: 0;
-    color: #000000;
+    color: #000;
     display: block;
     padding: 0 5px;
     text-decoration: none; }

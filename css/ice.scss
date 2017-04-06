@@ -1,12 +1,12 @@
 //---------style for everything--------
-$white: #000000;
+$white: #000;
 $black: #afecff;
-$logo-color: rgb(80, 106, 163);
+$logo-color: #6096ba;
 $lang-color: rgb(163, 80, 120);
-$menu-color: rgb(195, 233, 207);
+$menu-color: rgb(133, 195, 152);
 $cv-color: rgb(30, 89, 97);
 $portfolio-color: rgb(36, 38, 196);
-$skills-color: rgb(173, 255, 153);
+$skills-color: rgb(125, 209, 105);
 $contact-color: rgb(247, 214, 72);
 $content-color: #82d597;
 $brown: #e0faf6;
@@ -134,7 +134,7 @@ i {
   height: 80%;}
 
 .menu {
-  background-color: $menu-color;
+  background: radial-gradient(circle, lighten($menu-color, 30%), $menu-color);
   display: flex;
   flex-wrap: wrap;
   font-weight: bold;
@@ -149,7 +149,7 @@ i {
   flex-direction: column;
   height: 35%;
   text-align: center;
-  transition: background-color;
+  transition: background;
   transition-duration: 300ms;
   width: 35%;
 
@@ -162,44 +162,45 @@ i {
 
 .cv {
   display: flex;
-  background-color: $cv-color;
+  background: linear-gradient(145deg, $cv-color, lighten($cv-color, 60%));
   margin: 8% 5% 2% 10%;}
 
 .portfolio {
-  background-color: $portfolio-color;
+  background: linear-gradient(225deg, $portfolio-color, lighten($portfolio-color, 40%));
   margin: 8% 10% 2% 5%;}
 
 .contact {
-  background-color: lighten($contact-color, 10%);
+  background: linear-gradient(45deg, $contact-color, lighten($contact-color, 20%));
   margin: 5% 5% 5% 10%;}
 
 .skills {
-  background-color: $skills-color;
+  background: linear-gradient(315deg, $skills-color, lighten($skills-color, 20%));
   margin: 5% 10% 5% 5%;}
 
 .cv:hover {
-  background-color: darken($cv-color, 15%);}
+  background: linear-gradient(145deg, darken($cv-color, 15%), lighten($cv-color, 60%));}
 
 .portfolio:hover {
-  background-color: darken($portfolio-color, 10%);}
+  background: linear-gradient(225deg, darken($portfolio-color, 15%), lighten($portfolio-color, 50%));}
 
 .contact:hover {
-  background-color: $contact-color;}
+  background: linear-gradient(45deg, darken($contact-color, 15%), lighten($contact-color, 30%));}
 
 .skills:hover {
-  background-color: darken($skills-color, 10%);
-}
+  background: linear-gradient(315deg, darken($skills-color, 15%), lighten($skills-color, 30%));}
+
 
 .content {
-  background-color: $content-color;
+  background: radial-gradient(circle, lighten($menu-color, 30%), $menu-color);
   display: flex;
   overflow: auto;
   width: 50%;
 }
 
 .content-landing-page {
-  background-color: darken($content-color, 15%);
-  box-shadow: 0 8px 6px -6px $black;
+  //background: transparent;
+  //background-color: darken($content-color, 15%);
+  //box-shadow: 0 8px 6px -6px $black;
   padding-bottom: 5px;
   padding-left: 10px;
   width: 80%;
@@ -221,8 +222,8 @@ i {
 }
 
 .content-cv {
-  background-color: darken($content-color, 15%);
-  box-shadow: 0 8px 6px -6px $black;
+  //background-color: darken($content-color, 15%);
+  //box-shadow: 0 8px 6px -6px $black;
   height: 93%;
   overflow: auto;
   width: 93%;
@@ -245,8 +246,8 @@ i {
 }
 
 .content-skills {
-  background-color: darken($content-color, 15%);
-  box-shadow: 0 8px 6px -6px $black;
+  //background-color: darken($content-color, 15%);
+  //box-shadow: 0 8px 6px -6px $black;
   height: 93%;
   overflow: auto;
   width: 93%;
@@ -273,8 +274,8 @@ i {
 }
 
 .content-contact {
-  background-color: darken($content-color, 15%);
-  box-shadow: 0 8px 6px -6px $black;
+  //background-color: darken($content-color, 15%);
+  //box-shadow: 0 8px 6px -6px $black;
   height: 93%;
   overflow: auto;
   width: 93%;
@@ -343,8 +344,8 @@ i {
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  background-color: darken($content-color, 15%);
-  box-shadow: 0 8px 6px -6px $black;
+  //background-color: darken($content-color, 15%);
+  //box-shadow: 0 8px 6px -6px $black;
   justify-content: space-around;
   transition: all 0.3s linear;
 
