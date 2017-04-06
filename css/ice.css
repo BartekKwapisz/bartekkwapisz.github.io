@@ -86,7 +86,7 @@ a {
   cursor: pointer;
   background-color: #4e8ab2; }
 
-.pl {
+.opacity08 {
   opacity: .8; }
 
 i {
@@ -309,7 +309,7 @@ i {
   .header {
     height: 10%; }
 
-  .en {
+  .hideOnSmallerScreen {
     display: none; }
 
   i {

@@ -106,9 +106,9 @@ a {
   cursor: pointer;
   background-color: darken($logo-color, 5%);}
 
-.pl {
-  opacity: .8;
-}
+  .opacity08{
+  	  opacity: .8;
+  	}
 
 i {
   text-shadow: 4px 4px 5px $black;}
@@ -408,7 +408,7 @@ i {
   .header {
     height: 10%;}
 
-  .en {
+  .hideOnSmallerScreen {
     display: none;}
 
   i {
@@ -575,7 +575,3 @@ ol span,
 .hidden {
   opacity: 0;
 }
-
-//jak dodać animację?
-// stackoverflow.com/questions/3331353/transitions-on-the-display-property
-// www.impressivewebs.com/animate-display-block-none/

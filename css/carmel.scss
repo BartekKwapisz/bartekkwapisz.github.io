@@ -106,9 +106,9 @@ a {
   cursor: pointer;
   background-color: darken($logo-color, 5%);}
 
-.pl {
-  opacity: .8;
-}
+  .opacity08{
+  	  opacity: .8;
+  	}
 
 i {
   text-shadow: 4px 4px 5px $black;}
@@ -240,6 +240,7 @@ i {
 
     &:hover {
       text-decoration: underline;
+      text-decoration-color: $logo-color;
     }
   }
 }
@@ -265,6 +266,7 @@ i {
 
     &:hover {
       text-decoration: underline;
+      text-decoration-color: $portfolio-color;
     }
   }
   i {
@@ -331,7 +333,7 @@ i {
   }
 
   #contact button[type="submit"]:hover {
-	background: darken($contact-color, 15%);
+	background: darken($logo-color, 15%);
 	transition: background-color 0.3s ease-in-out;
   }
 
@@ -407,7 +409,7 @@ i {
   .header {
     height: 10%;}
 
-  .en {
+    .hideOnSmallerScreen {
     display: none;}
 
   i {
