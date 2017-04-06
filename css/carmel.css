@@ -107,6 +107,7 @@ i {
   height: 80%; }
 
 .menu {
+  box-shadow: 0px -13px 35px -10px #E17C00;
   background-color: #E17C00;
   display: flex;
   flex-wrap: wrap;
@@ -128,19 +129,23 @@ i {
   cursor: pointer; }
 
 .cv {
+  box-shadow: inset 0 0 40px #E17C00;
   display: flex;
   background-color: #d7f521;
   margin: 8% 5% 2% 10%; }
 
 .portfolio {
+  box-shadow: inset 0 0 40px #E17C00;
   background-color: #e3542f;
   margin: 8% 10% 2% 5%; }
 
 .contact {
-  background-color: #d544f9;
+  box-shadow: inset 0 0 40px #E17C00;
+  background-color: #d60001;
   margin: 5% 5% 5% 10%; }
 
 .skills {
+  box-shadow: inset 0 0 40px #E17C00;
   background-color: #131e28;
   margin: 5% 10% 5% 5%; }
 
@@ -151,12 +156,13 @@ i {
   background-color: #c53d1a; }
 
 .contact:hover {
-  background-color: #ca13f7; }
+  background-color: #A30001; }
 
 .skills:hover {
   background-color: #030405; }
 
 .content {
+  box-shadow: 0px -13px 35px -10px #E17C00, -15px 0px 35px -10px #fac21b;
   background-color: #505927;
   display: flex;
   overflow: auto;
@@ -247,7 +253,8 @@ i {
     width: 100%;
     margin: 0 0 2px;
     padding: 5px;
-    font-size: 2vh; }
+    font-size: 2vh;
+    box-shadow: inset 0 0 52px orange; }
   .content-contact #contact textarea {
     min-height: 100px;
     max-width: 100%;
@@ -264,8 +271,9 @@ i {
     font-size: 3vh;
     color: #fff; }
   .content-contact #contact button[type="submit"]:hover {
+    box-shadow: 0px -13px 35px -10px #E17C00;
     background: #c49404;
-    transition: background-color 0.3s ease-in-out; }
+    transition: all 0.6s ease-in-out; }
   .content-contact #contact button[type="submit"]:active {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); }
 
@@ -301,6 +309,7 @@ i {
   height: 10%; }
 
 .settings {
+  box-shadow: 0px -20px 35px -10px #fac21b;
   background-color: #a48a2a;
   display: flex;
   font-size: 3vw;
