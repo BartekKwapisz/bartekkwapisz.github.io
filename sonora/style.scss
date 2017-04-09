@@ -210,6 +210,7 @@ padding-right: 3px;
   .middle__middle-column{
     margin: 0 18px;
     width: 309px;
+    position: relative;
   }
   .middle__right-column{
     margin: 0 18px;
@@ -225,8 +226,8 @@ padding-right: 3px;
     height: 119px;
     background-color: white;
     border-radius: 10px;
-    top: 810px;
-    right: 410px;
+    top:-80px;
+    left: 20px;
 
 
     h4 {
@@ -243,7 +244,7 @@ padding-right: 3px;
     border-width: 16px 16px 0 16px;
     bottom:-16px;
     content: "";
-    left: 51px;
+    left: 41px;
     position: absolute;
     z-index: 99;
 }
