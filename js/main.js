@@ -241,7 +241,7 @@ function runEverything(){
         if(isPolish)
             changeInfoOnHover('Kliknij ikony by otworzyć link w nowym oknie');
     }, false);
-    // ********************TOUCH EVENTS**********************//
+
     function eventFire(el, etype){
         if (el.fireEvent) {
             el.fireEvent('on' + etype);
@@ -251,10 +251,11 @@ function runEverything(){
             el.dispatchEvent(evObj);
         }
     }
-    function activateSliderSwipeOnTouch (){
+    // ********************TOUCH EVENTS**********************//
+    // function activateSliderSwipeOnTouch (){
         document.addEventListener('touchstart', handleTouchStart, false);
         document.addEventListener('touchmove', handleTouchMove, false);
-    }
+    // }
     function deactivateSliderSwipeOnTouch (){
         document.removeEventListener('touchstart', handleTouchStart, false);
         document.removeEventListener('touchmove', handleTouchMove, false);
@@ -297,7 +298,7 @@ function runEverything(){
         /* reset values */
         xDown = null;
         yDown = null;
-    };
+    }
 //****************END OF TOUCH EVENTS****************
     let sliderCount = 1;
     sliderLeftArrow.addEventListener('click', function() {
