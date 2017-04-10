@@ -340,7 +340,19 @@ i {
     justify-content: center; }
     .modal .slider .left-arrow, .modal .slider .right-arrow {
       align-self: center;
-      font-size: 50px; }
+      cursor: pointer; }
+    .modal .slider .left-arrow {
+      width: 0;
+      height: 0;
+      border-right: 30px solid #fff;
+      border-bottom: 20px solid   transparent;
+      border-top: 20px solid transparent; }
+    .modal .slider .right-arrow {
+      width: 0;
+      height: 0;
+      border-left: 30px solid #fff;
+      border-bottom: 20px solid transparent;
+      border-top: 20px solid transparent; }
     .modal .slider a {
       -webkit-user-select: none;
       -moz-user-select: none;
