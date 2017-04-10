@@ -17,6 +17,7 @@ function runEverything(){
     let codepen = document.querySelector('.codepen');
     let natfit = document.querySelector('.natfit');
     let legume = document.querySelector('.legume');
+    let submit = document.getElementById('contact-submit');
     let psd = document.querySelector('.psd');
     let contact = document.querySelector('.contact');
     let contentLandingPage = document.querySelector('.content-landing-page');
@@ -31,6 +32,16 @@ function runEverything(){
     let ice = document.querySelector('.ice');
     let gimmick = document.querySelector('.gimmick');
     let wrapper = document.querySelector('.wrapper');
+    let sliderLeftArrow = document.querySelector('.left-arrow');
+    let sliderRightArrow = document.querySelector('.right-arrow');
+    let sliderImgContainer = document.querySelector('.slider__img-container');
+    let sliderPageName = document.querySelector('.page-name');
+    let sliderSquare1 = document.querySelector('#slider-square-1');
+    let sliderSquare2 = document.querySelector('#slider-square-2');
+    let sliderSquare3 = document.querySelector('#slider-square-3');
+    let modal = document.querySelector('.modal');
+    let shadowUnderModal = document.querySelector('.shadow');
+    let closeModal = document.querySelector('.close');
     let XHR = null;
     let variablesNames = [contentLandingPage,contentCv,contentSkills,contentPortfolio,contentContact];
     function hideAllContentElements(){
@@ -191,11 +202,155 @@ function runEverything(){
         if(isPolish)
             changeInfoOnHover('Pliki PSD "pocięte" do HTML i CSS');
     }, false);
+    psd.addEventListener('click', function() {
+
+        showClickedContentElement(shadowUnderModal);
+        showClickedContentElement(modal);
+    }, false);
+    closeModal.addEventListener('click', function() {
+        modal.classList.add('hidden');
+        shadowUnderModal.classList.add('hidden');
+        setTimeout(function () {
+            modal.classList.add('no-display');
+            shadowUnderModal.classList.add('no-display');
+        }, 300);
+    }, false);
+    document.addEventListener('keyup', function (ev) {
+        if(ev.keyCode === 27) {
+            modal.classList.add('hidden');
+            shadowUnderModal.classList.add('hidden');
+            setTimeout(function () {
+                modal.classList.add('no-display');
+                shadowUnderModal.classList.add('no-display');
+            }, 300);
+        }
+    }, false);
+    document.addEventListener('keyup', function (ev) {
+        if(ev.keyCode === 37) {
+            eventFire(sliderLeftArrow, 'click');
+        }
+    }, false);
+    document.addEventListener('keyup', function (ev) {
+        if(ev.keyCode === 39) {
+            eventFire(sliderRightArrow, 'click');
+        }
+    }, false);
     contentPortfolio.addEventListener('mouseout', function() {
         if(!isPolish)
             changeInfoOnHover('Click on icons to open new window');
         if(isPolish)
             changeInfoOnHover('Kliknij ikony by otworzyć link w nowym oknie');
+    }, false);
+    // ********************TOUCH EVENTS**********************//
+    function eventFire(el, etype){
+        if (el.fireEvent) {
+            el.fireEvent('on' + etype);
+        } else {
+            var evObj = document.createEvent('Events');
+            evObj.initEvent(etype, true, false);
+            el.dispatchEvent(evObj);
+        }
+    }
+    function activateSliderSwipeOnTouch (){
+        document.addEventListener('touchstart', handleTouchStart, false);
+        document.addEventListener('touchmove', handleTouchMove, false);
+    }
+    function deactivateSliderSwipeOnTouch (){
+        document.removeEventListener('touchstart', handleTouchStart, false);
+        document.removeEventListener('touchmove', handleTouchMove, false);
+    }
+    var xDown = null;
+    var yDown = null;
+
+    function handleTouchStart(evt) {
+        xDown = evt.touches[0].clientX;
+        yDown = evt.touches[0].clientY;
+    }
+
+    function handleTouchMove(evt) {
+        if ( ! xDown || ! yDown ) {
+            return;
+        }
+
+        var xUp = evt.touches[0].clientX;
+        var yUp = evt.touches[0].clientY;
+
+        var xDiff = xDown - xUp;
+        var yDiff = yDown - yUp;
+
+        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+            if ( xDiff > 0 ) {
+                /* left swipe */
+                eventFire(sliderLeftArrow, 'click');
+            } else {
+                /* right swipe */
+                eventFire(sliderRightArrow, 'click');
+            }
+        }
+        // else {
+        //     if ( yDiff > 0 ) {
+        //         /* up swipe */
+        //     } else {
+        //         /* down swipe */
+        //     }
+        // }
+        /* reset values */
+        xDown = null;
+        yDown = null;
+    };
+//****************END OF TOUCH EVENTS****************
+    let sliderCount = 1;
+    sliderLeftArrow.addEventListener('click', function() {
+        // if (sliderCount === 1) { UNCOMMENT WHEN SLIDER LEFT TO RIGHT ANIMATION SOLVED
+        //     sliderImgContainer.classList.remove('left-bg-pos');
+        //     sliderImgContainer.classList.add('right-bg-pos');
+        //     sliderCount = 3;
+        //     sliderPageName.textContent = 'Sonora';
+        //     sliderSquare1.classList.remove('slider__state-square--active');
+        //     sliderSquare3.classList.add('slider__state-square--active');
+        // }
+        if (sliderCount === 2) {
+            sliderImgContainer.classList.remove('center-bg-pos');
+            sliderImgContainer.classList.add('left-bg-pos');
+            sliderCount = 1;
+            sliderPageName.textContent = 'page1';
+            sliderSquare2.classList.remove('slider__state-square--active');
+            sliderSquare1.classList.add('slider__state-square--active');
+        }
+        else if (sliderCount === 3) {
+            sliderImgContainer.classList.remove('right-bg-pos');
+            sliderImgContainer.classList.add('center-bg-pos');
+            sliderCount = 2;
+            sliderPageName.textContent = 'page2';
+            sliderSquare3.classList.remove('slider__state-square--active');
+            sliderSquare2.classList.add('slider__state-square--active');
+        }
+    }, false);
+    sliderRightArrow.addEventListener('click', function() {
+        if (sliderCount === 1) {
+            sliderImgContainer.classList.remove('left-bg-pos');
+            sliderImgContainer.classList.add('center-bg-pos');
+            sliderCount = 2;
+            sliderPageName.textContent = 'page2';
+            sliderSquare1.classList.remove('slider__state-square--active');
+            sliderSquare2.classList.add('slider__state-square--active');
+        }
+        else if (sliderCount === 2) {
+            sliderImgContainer.classList.remove('center-bg-pos');
+            sliderImgContainer.classList.add('right-bg-pos');
+            sliderCount = 3;
+            sliderPageName.textContent = 'Sonora';
+            sliderSquare2.classList.remove('slider__state-square--active');
+            sliderSquare3.classList.add('slider__state-square--active');
+        }
+        // else if (sliderCount === 3) {
+        //     sliderImgContainer.classList.remove('right-bg-pos');
+        //     sliderImgContainer.classList.add('left-bg-pos');
+        //     sliderCount = 1;
+        //     sliderPageName.textContent = 'page1';
+        //     sliderSquare3.classList.remove('slider__state-square--active');
+        //     sliderSquare1.classList.add('slider__state-square--active');
+        // }
     }, false);
     pl.addEventListener('click', function() {
         isPolish = true;
@@ -268,6 +423,9 @@ function runEverything(){
     pastel.addEventListener('click', function() {
         document.getElementById('stylesheet').href = 'css/style.css';
     }, false);
+    submit.addEventListener('click', function (ev) {
+        ev.preventDefault();
+    },false);
     function ajaxInit(){
         try{
             XHR = new XMLHttpRequest();
