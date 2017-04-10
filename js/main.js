@@ -282,10 +282,10 @@ function runEverything(){
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
             if ( xDiff > 0 ) {
                 /* left swipe */
-                eventFire(sliderLeftArrow, 'click');
+                eventFire(sliderRightArrow, 'click');
             } else {
                 /* right swipe */
-                eventFire(sliderRightArrow, 'click');
+                eventFire(sliderLeftArrow, 'click');
             }
         }
         // else {
