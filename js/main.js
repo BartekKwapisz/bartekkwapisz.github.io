@@ -42,6 +42,8 @@ function runEverything(){
         modal = document.querySelector('.modal'),
         shadowUnderModal = document.querySelector('.shadow'),
         closeModal = document.querySelector('.close'),
+        showPage = document.querySelector('#show-page'),
+        downloadPSD = document.querySelector('#download-psd'),
         XHR = null,
         variablesNames = [contentLandingPage,contentCv,contentSkills,contentPortfolio,contentContact];
     function hideAllContentElements(){
@@ -322,9 +324,11 @@ function runEverything(){
             sliderImgContainer.classList.remove('right-bg-pos');
             sliderImgContainer.classList.add('center-bg-pos');
             sliderCount = 2;
-            sliderPageName.textContent = 'page2';
+            sliderPageName.textContent = 'Picto';
             sliderSquare3.classList.remove('slider__state-square--active');
             sliderSquare2.classList.add('slider__state-square--active');
+            showPage.setAttribute('href', 'picto/index.html');
+            downloadPSD.setAttribute('href', 'picto/picto.psd');
         }
     }, false);
     sliderRightArrow.addEventListener('click', function() {
@@ -332,9 +336,11 @@ function runEverything(){
             sliderImgContainer.classList.remove('left-bg-pos');
             sliderImgContainer.classList.add('center-bg-pos');
             sliderCount = 2;
-            sliderPageName.textContent = 'page2';
+            sliderPageName.textContent = 'Picto';
             sliderSquare1.classList.remove('slider__state-square--active');
             sliderSquare2.classList.add('slider__state-square--active');
+            showPage.setAttribute('href', 'picto/index.html');
+            downloadPSD.setAttribute('href', 'picto/picto.psd');
         }
         else if (sliderCount === 2) {
             sliderImgContainer.classList.remove('center-bg-pos');
@@ -343,6 +349,8 @@ function runEverything(){
             sliderPageName.textContent = 'Sonora';
             sliderSquare2.classList.remove('slider__state-square--active');
             sliderSquare3.classList.add('slider__state-square--active');
+            showPage.setAttribute('href', 'sonora/index.html');
+            downloadPSD.setAttribute('href', 'sonora/Sonor-home1.psd');
         }
         // else if (sliderCount === 3) {
         //     sliderImgContainer.classList.remove('right-bg-pos');
