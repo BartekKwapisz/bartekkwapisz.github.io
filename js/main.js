@@ -316,9 +316,11 @@ function runEverything(){
             sliderImgContainer.classList.remove('center-bg-pos');
             sliderImgContainer.classList.add('left-bg-pos');
             sliderCount = 1;
-            sliderPageName.textContent = 'page1';
+            sliderPageName.textContent = 'U.Flowers';
             sliderSquare2.classList.remove('slider__state-square--active');
             sliderSquare1.classList.add('slider__state-square--active');
+            showPage.setAttribute('href', 'utopic-flowers/index.html');
+            downloadPSD.setAttribute('href', 'utopic-flowers/utopic-flowers.psd');
         }
         else if (sliderCount === 3) {
             sliderImgContainer.classList.remove('right-bg-pos');
@@ -356,9 +358,11 @@ function runEverything(){
         //     sliderImgContainer.classList.remove('right-bg-pos');
         //     sliderImgContainer.classList.add('left-bg-pos');
         //     sliderCount = 1;
-        //     sliderPageName.textContent = 'page1';
-        //     sliderSquare3.classList.remove('slider__state-square--active');
-        //     sliderSquare1.classList.add('slider__state-square--active');
+        //      sliderPageName.textContent = 'U.Flowers';
+          // sliderSquare2.classList.remove('slider__state-square--active');
+          // sliderSquare1.classList.add('slider__state-square--active');
+          // showPage.setAttribute('href', 'utopic-flowers/index.html');
+          // downloadPSD.setAttribute('href', 'utopic-flowers/utopic-flowers.psd');
         // }
     }, false);
     pl.addEventListener('click', function() {
