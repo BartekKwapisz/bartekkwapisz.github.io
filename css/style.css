@@ -8,6 +8,8 @@ html {
 body {
   color: #fff;
   font-family: 'Dosis', sans-serif;
+  position: fixed;
+  overflow: hidden;
   font-size: 5vh; }
 
 * {
@@ -133,7 +135,7 @@ i {
   margin: 8% 5% 2% 10%; }
 
 .portfolio {
-  background-color: #e32fdc;
+  background-color: #f58137;
   margin: 8% 10% 2% 5%; }
 
 .contact {
@@ -148,7 +150,7 @@ i {
   background-color: #29d7ef; }
 
 .portfolio:hover {
-  background-color: #c51abe; }
+  background-color: #ed640c; }
 
 .contact:hover {
   background-color: #f7cc13; }

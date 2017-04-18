@@ -19,6 +19,7 @@ function runEverything(){
         legume = document.querySelector('.legume'),
         submit = document.getElementById('contact-submit'),
         psd = document.querySelector('.psd'),
+        modalOpened = false,
         contact = document.querySelector('.contact'),
         contentLandingPage = document.querySelector('.content-landing-page'),
         contentCv = document.querySelector('.content-cv'),
@@ -44,6 +45,7 @@ function runEverything(){
         closeModal = document.querySelector('.close'),
         showPage = document.querySelector('#show-page'),
         downloadPSD = document.querySelector('#download-psd'),
+        fileSize = '1.8 MB',
         XHR = null,
         variablesNames = [contentLandingPage,contentCv,contentSkills,contentPortfolio,contentContact];
     function hideAllContentElements(){
@@ -84,7 +86,7 @@ function runEverything(){
             hideAllContentElements();
             showClickedContentElement(contentCv);
             if(!isPolish)
-                changeInfoOnHover('You may find some links in cv text');
+                changeInfoOnHover("You may find some links in text above");
             if(isPolish)
                 changeInfoOnHover('W tekście cv odnajdziesz kilka linków');
         }
@@ -92,7 +94,7 @@ function runEverything(){
             hideAllContentElements();
             showClickedContentElement(contentPortfolio);
             if(!isPolish)
-                changeInfoOnHover('Click on icons to open new window');
+                changeInfoOnHover('Click on icons to open a new window');
             if(isPolish)
                 changeInfoOnHover('Kliknij ikony by otworzyć link w nowym oknie');
         }
@@ -203,11 +205,27 @@ function runEverything(){
             changeInfoOnHover('Some PSD files sliced to HTML and CSS sites');
         if(isPolish)
             changeInfoOnHover('Pliki PSD "pocięte" do HTML i CSS');
+        modalOpened = true;
     }, false);
     psd.addEventListener('click', function() {
-
         showClickedContentElement(shadowUnderModal);
         showClickedContentElement(modal);
+        if(!isPolish)
+            changeInfoOnHover('Use arrows to switch sites, click "X" or press "Esc" to exit');
+        if(isPolish)
+            changeInfoOnHover('Użyj strzałek do zmiany stron, kliknij "X" lub naciśnij "Esc" by wyjść');
+    }, false);
+    downloadPSD.addEventListener('mouseover', function() {
+        if(!isPolish)
+            changeInfoOnHover('File size: '+fileSize);
+        if(isPolish)
+            changeInfoOnHover('Rozmiar pliku: '+fileSize);
+    }, false);
+    downloadPSD.addEventListener('mouseout', function() {
+        if(!isPolish)
+            changeInfoOnHover('Use arrows to switch sites, click "X" or press "Esc" to exit');
+        if(isPolish)
+            changeInfoOnHover('Użyj strzałek do zmiany stron, kliknij "X" lub naciśnij "Esc" by wyjść');
     }, false);
     closeModal.addEventListener('click', function() {
         modal.classList.add('hidden');
@@ -216,6 +234,7 @@ function runEverything(){
             modal.classList.add('no-display');
             shadowUnderModal.classList.add('no-display');
         }, 300);
+        modalOpened = false;
     }, false);
     document.addEventListener('keyup', function (ev) {
         if(ev.keyCode === 27) {
@@ -238,10 +257,12 @@ function runEverything(){
         }
     }, false);
     contentPortfolio.addEventListener('mouseout', function() {
-        if(!isPolish)
-            changeInfoOnHover('Click on icons to open new window');
-        if(isPolish)
-            changeInfoOnHover('Kliknij ikony by otworzyć link w nowym oknie');
+        if(!modalOpened){
+            if(!isPolish)
+                changeInfoOnHover('Click on icons to open a new window');
+            if(isPolish)
+                changeInfoOnHover('Kliknij ikony by otworzyć link w nowym oknie');
+        }
     }, false);
 
     function eventFire(el, etype){
@@ -321,6 +342,7 @@ function runEverything(){
             sliderSquare1.classList.add('slider__state-square--active');
             showPage.setAttribute('href', 'utopic-flowers/index.html');
             downloadPSD.setAttribute('href', 'utopic-flowers/utopic-flowers.psd');
+            fileSize = '1.8 MB';
         }
         else if (sliderCount === 3) {
             sliderImgContainer.classList.remove('right-bg-pos');
@@ -331,6 +353,7 @@ function runEverything(){
             sliderSquare2.classList.add('slider__state-square--active');
             showPage.setAttribute('href', 'picto/index.html');
             downloadPSD.setAttribute('href', 'picto/picto.psd');
+            fileSize = '6.2 MB';
         }
     }, false);
     sliderRightArrow.addEventListener('click', function() {
@@ -343,6 +366,7 @@ function runEverything(){
             sliderSquare2.classList.add('slider__state-square--active');
             showPage.setAttribute('href', 'picto/index.html');
             downloadPSD.setAttribute('href', 'picto/picto.psd');
+            fileSize = '6.2 MB';
         }
         else if (sliderCount === 2) {
             sliderImgContainer.classList.remove('center-bg-pos');
@@ -353,6 +377,7 @@ function runEverything(){
             sliderSquare3.classList.add('slider__state-square--active');
             showPage.setAttribute('href', 'sonora/index.html');
             downloadPSD.setAttribute('href', 'sonora/Sonor-home1.psd');
+            fileSize = '14.3 MB';
         }
         // else if (sliderCount === 3) {
         //     sliderImgContainer.classList.remove('right-bg-pos');

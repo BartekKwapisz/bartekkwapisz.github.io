@@ -5,7 +5,7 @@ $logo-color: rgb(80, 106, 163);
 $lang-color: rgb(59, 55, 66);
 $menu-color: rgb(69, 231, 119);
 $cv-color: rgb(112, 228, 244);
-$portfolio-color: rgb(227, 47, 220);
+$portfolio-color: rgb(245, 129, 55);
 $skills-color: rgb(150, 244, 33);
 $contact-color: rgb(247, 204, 19);
 $content-color: #c9d582;
@@ -24,6 +24,8 @@ html {
 body {
   color: $white;
   font-family: 'Dosis', sans-serif;
+  position: fixed;
+  overflow: hidden;
   font-size: 5vh;}
 
 * {
