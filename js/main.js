@@ -8,6 +8,7 @@ function runEverything(){
         freeCodeCamp = document.querySelector('#fcc'),
         cv = document.querySelector('.cv'),
         skills = document.querySelector('.skills'),
+        changeFontSize = document.getElementsByClassName('font-size'),
         portfolio = document.querySelector('.portfolio'),
         calculator = document.querySelector('.calculator'),
         simon = document.querySelector('.simon'),
@@ -23,8 +24,10 @@ function runEverything(){
         contact = document.querySelector('.contact'),
         contentLandingPage = document.querySelector('.content-landing-page'),
         contentCv = document.querySelector('.content-cv'),
+        contentCvParagraph = document.querySelector('.content-cv p'),
         contentPortfolio = document.querySelector('.content-portfolio'),
         contentSkills = document.querySelector('.content-skills'),
+        contentSkillsParagraph = document.querySelector('.content-skills p'),
         contentContact = document.querySelector('.content-contact'),
         themes = document.querySelector('.themes'),
         versions = document.querySelector('.versions'),
@@ -127,12 +130,59 @@ function runEverything(){
     skills.addEventListener('click', function() {
         window.location.hash = 'skills';
     }, false);
+    // preventing bug with relative height on IE and Firefox
+    // stackoverflow.com/questions/35532987/heights-rendering-differently-in-chrome-and-firefox
+    var isChrome = !!window.chrome && !!window.chrome.webstore;
+    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+    if(isChrome || isSafari) {
+        document.addEventListener('keyup', function (ev) {
+            if(ev.keyCode === 65) {
+                eventFire(changeFontSize[0], 'click');
+            }
+        }, false);
+    }
     portfolio.addEventListener('click', function() {
         window.location.hash = 'portfolio';
     }, false);
     contact.addEventListener('click', function() {
         window.location.hash = 'contact';
     }, false);
+    let fontClickCounter = 0;
+    for (let i = 0; i < changeFontSize.length; i++) {
+        changeFontSize[i].addEventListener('click', function() {
+            if(fontClickCounter%2 === 0) {
+                contentSkillsParagraph.style.fontSize = '4vh'; //DISTORTIONS IN FIREFOX!!!
+                // stackoverflow.com/questions/35532987/heights-rendering-differently-in-chrome-and-firefox
+                contentCvParagraph.style.fontSize = '4vh';  //DISTORTIONS IN FIREFOX!!!
+                for(let j = 0; j < changeFontSize.length; j++){
+                    changeFontSize[j].textContent = 'a-';}
+                fontClickCounter++; }
+            else if (fontClickCounter%2 !== 0) {
+                contentSkillsParagraph.style.fontSize = '3vh';
+                contentCvParagraph.style.fontSize = '3vh';
+                for(let k = 0; k < changeFontSize.length; k++){
+                    changeFontSize[k].textContent = 'A+';}
+                fontClickCounter++; }
+        }, false);
+        changeFontSize[i].addEventListener('mouseover', function() {
+            if(fontClickCounter%2 === 0) {
+                if(!isPolish)
+                    changeInfoOnHover('Click or press "A" to enlarge font');
+                if(isPolish)
+                    changeInfoOnHover('Kliknij lub naciśnij "A" by zwiększyć czcionkę');}
+            else if (fontClickCounter%2 !== 0) {
+                if(!isPolish)
+                    changeInfoOnHover('Click or press "A" to shrink font');
+                if(isPolish)
+                    changeInfoOnHover('Kliknij lub naciśnij "A" by zmniejszyć czcionkę');}
+        }, false);
+        changeFontSize[i].addEventListener('mouseout', function() {
+            if(!isPolish)
+                changeInfoOnHover('* means I use it rarely');
+            if(isPolish)
+                changeInfoOnHover('* oznacza, że rzadko tego używałem');
+        }, false);
+    }
     freeCodeCamp.addEventListener('mouseover', function() {
         if(!isPolish)
             changeInfoOnHover('Now push "F" button to show my Front End Certificate');

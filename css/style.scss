@@ -3,10 +3,10 @@ $white: #fff;
 $black: #000;
 $logo-color: rgb(80, 106, 163);
 $lang-color: rgb(59, 55, 66);
-$menu-color: rgb(69, 231, 119);
-$cv-color: rgb(112, 228, 244);
+$menu-color: #d5b982;
+$cv-color: rgb(134, 218, 230);
 $portfolio-color: rgb(245, 129, 55);
-$skills-color: rgb(150, 244, 33);
+$skills-color: rgb(172, 246, 80);
 $contact-color: rgb(247, 204, 19);
 $content-color: #c9d582;
 $brown: #a52a2a;
@@ -129,10 +129,12 @@ i {
   opacity: .8;
 }
 .container {
-  height: 80%;}
+  height: 80%}
 
 .menu {
   background-color: $menu-color;
+  // background-image: url('../img/felt.jpg'); this for gimmick
+  // background-repeat: repeat-x;
   display: flex;
   flex-wrap: wrap;
   font-weight: bold;
@@ -173,7 +175,29 @@ i {
 
 .skills {
   background-color: $skills-color;
-  margin: 5% 10% 5% 5%;}
+  margin: 5% 10% 5% 5%;
+}
+//due to issues with relative height distortions
+// stackoverflow.com/questions/35532987/heights-rendering-differently-in-chrome-and-firefox
+@-moz-document url-prefix() {
+  .font-size {
+    display: none;
+  }
+}
+@media screen\0 { //To target IE 8, 9 and 10
+  .font-size {
+    display: none;
+  }
+}
+.font-size {
+  float: right;
+  font-size: 7vh;
+  margin-right: 10px;
+  color: $content-color !important;
+}
+.font-size {
+  text-decoration: none !important;
+}
 
 .cv:hover {
   background-color: darken($cv-color, 15%);}

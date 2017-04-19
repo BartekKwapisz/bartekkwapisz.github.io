@@ -109,7 +109,7 @@ i {
   height: 80%; }
 
 .menu {
-  background-color: #45e777;
+  background-color: #d5b982;
   display: flex;
   flex-wrap: wrap;
   font-weight: bold;
@@ -131,7 +131,7 @@ i {
 
 .cv {
   display: flex;
-  background-color: #70e4f4;
+  background-color: #86dae6;
   margin: 8% 5% 2% 10%; }
 
 .portfolio {
@@ -143,11 +143,26 @@ i {
   margin: 5% 5% 5% 10%; }
 
 .skills {
-  background-color: #96f421;
+  background-color: #acf650;
   margin: 5% 10% 5% 5%; }
 
+@-moz-document url-prefix() {
+  .font-size {
+    display: none; } }
+@media screen\0 {
+  .font-size {
+    display: none; } }
+.font-size {
+  float: right;
+  font-size: 7vh;
+  margin-right: 10px;
+  color: #c9d582 !important; }
+
+.font-size {
+  text-decoration: none !important; }
+
 .cv:hover {
-  background-color: #29d7ef; }
+  background-color: #47c7d9; }
 
 .portfolio:hover {
   background-color: #ed640c; }
@@ -156,7 +171,7 @@ i {
   background-color: #f7cc13; }
 
 .skills:hover {
-  background-color: #7cd70b; }
+  background-color: #95f41f; }
 
 .content {
   background-color: #c9d582;
