@@ -240,7 +240,7 @@ function runEverything(){
     }, false);
     natfit.addEventListener('mouseover', function() {
         if(!isPolish)
-            changeInfoOnHover('Siple site for friend (2016)');
+            changeInfoOnHover('Simple site for friend (2016)');
         if(isPolish)
             changeInfoOnHover('Prosta strona napisana dla kolegi w grudniu 2016');
     }, false);
