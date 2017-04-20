@@ -1,0 +1,326 @@
+#sklep{
+
+z-index: -1;
+position:absolute;
+top:130px;
+left:230px;
+width: 630px;
+height: 360px;
+background: url('https://antyszwecja.files.wordpress.com/2014/10/sklep.jpg');
+}
+#sklep:hover {
+    background: url('https://antyszwecja.files.wordpress.com/2014/10/sklep2.jpg');
+}
+
+	body {
+	background-color:#377550
+}
+
+.fb{
+position:absolute;
+left:1150px;
+top:190px;
+height:100px;
+width:100px;
+background: url('https://antyszwecja.files.wordpress.com/2014/10/fblogo.png');	
+}
+.fb:hover {
+    background: url('https://antyszwecja.files.wordpress.com/2014/10/fblogo3.png');
+}
+
+#logo {
+width: 250px;
+color:#00e42d;
+font-family: "Lucida Console", Monaco, monospace;
+border-width:5px;
+border-style:ridge;
+border-radius: 20px;
+border-color:#00e42d;
+position:absolute;
+left:150px;
+}
+#logo p {
+text-align:right;
+padding-right: 10px;
+}
+#logo h1 {
+text-align:center;
+}
+
+.prosty {
+display:inline;
+color:#00e42d;
+text-align:left;
+position:relative;
+left:3px;
+cursor:pointer;
+}
+span{
+font-size:1em;
+font-family: "Lucida Console", Monaco, monospace;
+color:#00e42d;
+}
+div.button{
+width: 120px;
+color:#00e42d;
+font-family: "Lucida Console", Monaco, monospace;
+border-width:5px;
+border-style:ridge;
+border-radius: 20px;
+border-color:#00e42d;
+text-align:center;
+position: absolute;
+}
+
+div.button:hover {
+    background-color:#CBFC86;
+}
+
+#cennik{
+    top: 170px;
+	left: 100px;
+	}
+#opinie{
+	top: 270px;
+	left:50px;
+	}
+#gra {
+	width: 250px;
+    top: 550px;
+	left: 250px;
+	}
+#blog{
+    top: 370px;
+	left: 70px;
+	}
+#cytaty{
+	top: 480px;
+	left: 100px;
+	}
+#galeria{
+	left:530px;
+	top:520px;
+}
+#strefa{
+	left:700px;
+	top:470px;
+}
+#filmy{
+	left:700px;
+	top:50px;
+}
+#misja{
+	left:850px;
+	top: 390px;
+}
+#enemies{
+	left:900px;
+	top: 270px;
+}
+#historia{
+	width:150px;
+	left:500px;
+	top:20px;
+}
+
+#lokalizacja{
+left: 940px;
+top:170px;
+width:100px;
+}
+
+#kontakt{
+left: 850px;
+top:70px;
+width:130px;
+}
+
+#godziny{
+width: 120px;
+color:#00e42d;
+font-family: "Lucida Console", Monaco, monospace;
+border-width:5px;
+border-style:ridge;
+text-align:center;
+position: absolute;
+}
+
+#godziny{
+z-index: -1;
+border:none;
+width: 400px;
+left:880px;
+top:300px;
+color: black;
+text-align: right; 
+}
+
+#godziny ul{
+font-size:150%;
+list-style:none;
+text-align:right;
+}
+
+
+      #blok {
+	  display: none;
+        position:relative;
+        width:500px;
+        height:2.2em;
+        line-height:2.2em;
+        margin:0 auto;
+		left:400px;
+        font-size:1.5em;
+        background-color:#EEE;
+        overflow:hidden;
+      }
+
+      #blok > p {
+        position:absolute;
+        margin:0;
+        white-space:nowrap;
+        animation:przesun 30s linear infinite;
+        -webkit-animation:przesun 30s linear infinite; /* dla Google Chrome, Safari, Opera 15+ */
+      }
+
+      #blok > p:hover {
+        animation-play-state:paused;
+        -webkit-animation-play-state:paused;
+      }
+	  
+      /* ------------ANIMACJA-PRZESUN------------ */
+      @keyframes przesun
+      {
+        0% { transform:translateX(0); padding-left:110%; }
+        100% { transform:translateX(-100%); padding-left:110%; }
+      }
+
+      @-webkit-keyframes przesun /* dla Google Chrome, Safari, Opera 15+ */
+      {
+        0% { -webkit-transform:translateX(0); padding-left:110%; }
+        100% { -webkit-transform:translateX(-100%); padding-left:110%; }
+      }
+
+	  
+#blurringTextG{
+position:absolute;
+width:180px;
+left:1100px;
+top:100px;
+}
+
+.blurringTextG{
+color:transparent;
+;
+font-family:Lucida Console;
+font-size:25px;
+text-decoration:none;
+font-weight:normal;
+font-style:normal;
+float:left;
+text-shadow: #00e42d 0 0 0;
+-moz-animation-name:bounce_blurringTextG;
+-moz-animation-duration:4.25s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+-webkit-animation-name:bounce_blurringTextG;
+-webkit-animation-duration:4.25s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-ms-animation-name:bounce_blurringTextG;
+-ms-animation-duration:4.25s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+-o-animation-name:bounce_blurringTextG;
+-o-animation-duration:4.25s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+animation-name:bounce_blurringTextG;
+animation-duration:4.25s;
+animation-iteration-count:infinite;
+animation-direction:linear;
+}
+
+@-moz-keyframes bounce_blurringTextG{
+0%{
+text-shadow: #00e42d 0 0 0;
+}
+
+50%{
+text-shadow: #377550 0 0 20px;
+}
+
+100%{
+text-shadow: #00e42d 0 0 0;
+}
+
+}
+
+@-webkit-keyframes bounce_blurringTextG{
+0%{
+text-shadow: #00e42d 0 0 0;
+}
+
+50%{
+text-shadow: #377550 0 0 20px;
+}
+
+100%{
+text-shadow: #00e42d 0 0 0;
+}
+
+}
+
+@-ms-keyframes bounce_blurringTextG{
+0%{
+text-shadow: #00e42d 0 0 0;
+}
+
+50%{
+text-shadow: #377550 0 0 20px;
+}
+
+100%{
+text-shadow: #00e42d 0 0 0;
+}
+
+}
+
+@-o-keyframes bounce_blurringTextG{
+0%{
+text-shadow: #00e42d 0 0 0;
+}
+
+50%{
+text-shadow: #377550 0 0 20px;
+}
+
+100%{
+text-shadow: #00e42d 0 0 0;
+}
+
+}
+
+@keyframes bounce_blurringTextG{
+0%{
+text-shadow: #00e42d 0 0 0;
+}
+
+50%{
+text-shadow: #377550 0 0 20px;
+}
+
+100%{
+text-shadow: #00e42d 0 0 0;
+}
+
+}
+
+
+
+
+
+
+
+
+

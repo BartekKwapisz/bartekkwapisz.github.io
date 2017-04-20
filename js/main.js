@@ -246,9 +246,9 @@ function runEverything(){
     }, false);
     legume.addEventListener('mouseover', function() {
         if(!isPolish)
-            changeInfoOnHover("Funny site for dad's kiosk (2014)");
+            changeInfoOnHover("My first site (for dad's kiosk in 2014)");
         if(isPolish)
-            changeInfoOnHover('Zabawna strona dla sklepu taty');
+            changeInfoOnHover('Moja pierwsza strona (dla sklepu taty w 2014)');
     }, false);
     psd.addEventListener('mouseover', function() {
         if(!isPolish)
