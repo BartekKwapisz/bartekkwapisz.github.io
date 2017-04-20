@@ -252,7 +252,7 @@ function runEverything(){
     }, false);
     psd.addEventListener('mouseover', function() {
         if(!isPolish)
-            changeInfoOnHover('Some PSD files sliced to HTML and CSS sites');
+            changeInfoOnHover('Some PSD files sliced to HTML and CSS');
         if(isPolish)
             changeInfoOnHover('Pliki PSD "pocięte" do HTML i CSS');
         modalOpened = true;
