@@ -76,7 +76,7 @@ a {
 
 .logo {
   align-items: center;
-  background-color: #506aa3;
+  /*background-color: #506aa3;*/
   display: flex;
   font-weight: bold;
   letter-spacing: 2vw;
