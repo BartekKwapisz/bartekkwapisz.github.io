@@ -155,11 +155,7 @@ i {
 .font-size {
   float: right;
   font-size: 7vh;
-  margin-right: 10px;
-  color: #c9d582 !important; }
-
-.font-size {
-  text-decoration: none !important; }
+  margin-right: 10px; }
 
 .cv:hover {
   background-color: #47c7d9; }
@@ -213,6 +209,10 @@ i {
     text-decoration: none; }
     .content-cv a:hover {
       text-decoration: underline; }
+  .content-cv .font-size {
+    color: #c9d582; }
+  .content-cv .font-size:hover {
+    text-decoration: none; }
 
 .content-skills {
   background-color: #b0c249;
@@ -233,6 +233,10 @@ i {
       text-decoration: underline; }
   .content-skills i {
     text-shadow: none; }
+  .content-skills .font-size {
+    color: #c9d582; }
+  .content-skills .font-size:hover {
+    text-decoration: none; }
 
 .content-contact {
   background-color: #b0c249;
@@ -254,7 +258,7 @@ i {
     margin: 0 auto;
     position: relative; }
   .content-contact fieldset {
-    border: none !important;
+    border: none;
     min-width: 100%;
     padding: 0;
     width: 100%; }
@@ -427,7 +431,7 @@ i {
   .info #changing-information {
     transition: all .2s linear; }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: 1000px) {
   .header {
     height: 10%; }
 
@@ -517,6 +521,10 @@ i {
   .content-portfolio {
     height: 100%;
     overflow: auto; } }
+@-moz-document url-prefix() {
+  @media all and (max-width: 1000px) {
+    .lang img {
+      max-height: 48px; } } }
 ol {
   display: flex;
   font-size: 4vh;

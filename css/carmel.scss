@@ -24,7 +24,9 @@ html {
 body {
   color: $white;
   font-family: 'Dosis', sans-serif;
-  font-size: 5vh;}
+  font-size: 5vh;
+  position: fixed;
+  overflow: hidden;}
 
 * {
   font-smoothing: antialiased;
@@ -106,10 +108,6 @@ a {
   cursor: pointer;
   background-color: darken($logo-color, 5%);}
 
-  .opacity08{
-  	  opacity: .8;
-  	}
-
 i {
   text-shadow: 4px 4px 5px $black;}
 
@@ -129,7 +127,9 @@ i {
     transition-duration: 300ms;
   }
 }
-
+.opacity08{
+	  opacity: .8;
+	}
 .container {
   height: 80%;}
 
@@ -176,8 +176,29 @@ i {
 
 .skills { box-shadow: inset 0 0 40px $menu-color;
   background-color: $skills-color;
-  margin: 5% 10% 5% 5%;}
-
+  margin: 5% 10% 5% 5%;
+  }
+//due to issues with relative height distortions
+	// stackoverflow.com/questions/35532987/heights-rendering-differently-in-chrome-and-firefox
+	@-moz-document url-prefix() {
+	  .font-size {
+	    display: none;
+	  }
+	}
+	@media screen\0 { //To target IE 8, 9 and 10
+	  .font-size {
+	    display: none;
+	  }
+	}
+	.font-size {
+	  float: right;
+	  font-size: 7vh;
+	  margin-right: 10px;
+	  color: $content-color !important;
+	}
+	.font-size {
+	  text-decoration: none !important;
+	}
 .cv:hover {
   background-color: darken($cv-color, 15%);}
 
@@ -356,7 +377,19 @@ i {
   a {
     color: $white;
     text-decoration: none;}
+  .psd {
+  	    cursor: pointer;
+  	  }
+  	  .close {
+  	    font-size: 60px;
+  	    position: absolute;
+  	    right: -30px;
+  	    top: -70px;
 
+  	  }
+  	  .close:hover {
+  	    color: darken($white, 15%);
+  	  }
   i {
     transition: all .2s ease-out;
     font-size: 11vh;}
@@ -380,7 +413,114 @@ i {
     }
   }
 }
+.modal {
+	  z-index: 999;
+	  position: fixed;
+	  background-color: darken($content-color, 15%);
+	  top:50%;
+	  left:75%; //zmień na 50% na komórce
+	  transform: translateX(-50%) translateY(-50%);
+	  height: 400px;
+	  width: 22.5%;
+	  min-width: 240px;
+	  display: flex;
+	  flex-direction: column;
+	  transition: opacity .5s ease-in;
+    box-shadow: 0 0 10px rgb(246, 172, 7);
+	  h5 {
+	     margin-top: 0;
+	     align-self: center;
+	     margin-bottom: 10px;
+	  }
+	  .slider__state-container {
+	    display: flex;
+	    flex-direction: row;
+	    align-self: center;
 
+	  }
+	  .slider__state-square {
+	    width: 15px;
+	    height: 10px;
+	    border: 2px solid $white;
+      box-shadow: 0 0 10px rgb(246, 172, 7);
+	    margin-right: 5px;
+	    margin-top: 10px;
+	  }
+	  .slider__state-square--active {
+	    background-color: $white;
+      box-shadow: inset 0 0 10px rgb(246, 172, 7);
+	  }
+	  .slider {
+	    display: flex;
+	    align-self: center;
+	    flex-direction: row;
+	    justify-content: center;
+	    .left-arrow, .right-arrow {
+	        align-self: center;
+	        cursor: pointer;
+	    }
+	    .left-arrow {
+	        width:0;
+	        height:0;
+	        border-right: 30px solid $white;
+	        border-bottom: 20px solid   transparent;
+	        border-top: 20px solid transparent;
+	    }
+	    .right-arrow {
+	        width:0;
+	        height:0;
+	        border-left: 30px solid $white;
+	        border-bottom: 20px solid transparent;
+	        border-top: 20px solid transparent;
+	    }
+	    a {
+	      -webkit-user-select: none;
+	      -moz-user-select: none;
+	      -ms-user-select: none;
+	       user-select: none;
+	    }
+	    a:hover {
+	      color: darken($white, 15%);
+	    }
+	  }
+
+	  .slider__img-container{
+	      overflow: hidden;
+	      min-height: 260px;
+	      min-width: 180px;
+	      outline:4px solid $white;
+	      background-image: url("../img/3pic.jpg");
+	      transition: all .5s ease;
+	  }
+	  .left-bg-pos {
+	      background-position: left;
+	  }
+	  .center-bg-pos {
+	      background-position: center;
+	  }
+	  .right-bg-pos {
+	      background-position: right;
+	  }
+
+	  p{
+	    text-align: center;
+	    margin-top: 5px;
+	    margin-bottom: 4px;
+	    font-size: 24px;
+	    a:hover {
+	      text-decoration: underline;
+	    }
+	  }
+	}
+	.shadow{
+	  z-index: 500;
+	  position:  fixed;
+	  width: 50%; //zmień na komórce na 100%
+	  height: 80%;
+	  top:10%;
+	  background: rgba(0,0,0,0.6);
+	  transition: opacity .5s ease-in;
+	}
 .footer {
   height: 10%;}
 
@@ -402,12 +542,12 @@ i {
   }
 
   #changing-information{
-    transition: all 0.20s linear;
+    transition: all .2s linear;
   }
 
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: 1000px) {
 
   .header {
     height: 10%;}
@@ -429,6 +569,12 @@ i {
     font-size: 4vh;
     i {
       font-size: 7vh;}
+    .close {
+       font-size: 50px;
+       position: absolute;
+       right: 1px;
+       top: -  25px;
+     }
   }
 
     .content-landing-page {
@@ -456,7 +602,13 @@ i {
         font-size: 4vh;
       }
     }
-
+  .modal {
+ 	    left:50%;
+ 	  }
+  .shadow {
+    width: 100%;
+    height: 100%;//jeszcze trzeba nad tym na komórki popracować bo nie przykrywa cieniem loga i języków
+  }
   .menu {
     height: 17%;
     width: 100%;}
@@ -498,6 +650,14 @@ i {
     overflow: auto;
   }
 }
+
+@-moz-document url-prefix() {
+   @media all and (max-width: 1000px) {
+      .lang {
+          img {max-height: 48px;} //fix issue with language flag height
+      }
+   }
+ }
 //end of media queries
 
 ol {
@@ -532,7 +692,7 @@ ol {
 
       ul {
         bottom: 100%;
-        max-height: 300px; //this coulde be removed
+        max-height: 300px; //this can be removed
         transform: scaleY(1);
         visibility: visible;}
     ;}
@@ -579,3 +739,8 @@ ol span,
 .hidden {
   opacity: 0;
 }
+
+.hide-modal {
+	  opacity: 0;
+	  z-index: -3;
+	}

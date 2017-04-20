@@ -373,19 +373,21 @@ function runEverything(){
         yDown = null;
     }
 //****************END OF TOUCH EVENTS****************
+    let moveBgImgBy = 0;
     let sliderCount = 1;
     sliderLeftArrow.addEventListener('click', function() {
-        // if (sliderCount === 1) { UNCOMMENT WHEN SLIDER LEFT TO RIGHT ANIMATION SOLVED
-        //     sliderImgContainer.classList.remove('left-bg-pos');
-        //     sliderImgContainer.classList.add('right-bg-pos');
-        //     sliderCount = 3;
-        //     sliderPageName.textContent = 'Sonora';
-        //     sliderSquare1.classList.remove('slider__state-square--active');
-        //     sliderSquare3.classList.add('slider__state-square--active');
-        // }
-        if (sliderCount === 2) {
-            sliderImgContainer.classList.remove('center-bg-pos');
-            sliderImgContainer.classList.add('left-bg-pos');
+        moveBgImgBy = moveBgImgBy + 180;
+        sliderImgContainer.style.backgroundPosition = moveBgImgBy + 'px';
+        if (sliderCount === 1) {
+            sliderCount = 3;
+            sliderPageName.textContent = 'Sonora';
+            sliderSquare1.classList.remove('slider__state-square--active');
+            sliderSquare3.classList.add('slider__state-square--active');
+            showPage.setAttribute('href', 'sonora/index.html');
+            downloadPSD.setAttribute('href', 'sonora/Sonor-home1.psd');
+            fileSize = '14.3 MB';
+        }
+        else if (sliderCount === 2) {
             sliderCount = 1;
             sliderPageName.textContent = 'U.Flowers';
             sliderSquare2.classList.remove('slider__state-square--active');
@@ -395,8 +397,6 @@ function runEverything(){
             fileSize = '1.8 MB';
         }
         else if (sliderCount === 3) {
-            sliderImgContainer.classList.remove('right-bg-pos');
-            sliderImgContainer.classList.add('center-bg-pos');
             sliderCount = 2;
             sliderPageName.textContent = 'Picto';
             sliderSquare3.classList.remove('slider__state-square--active');
@@ -406,10 +406,11 @@ function runEverything(){
             fileSize = '6.2 MB';
         }
     }, false);
+
     sliderRightArrow.addEventListener('click', function() {
+        moveBgImgBy = moveBgImgBy - 180;
+        sliderImgContainer.style.backgroundPosition = moveBgImgBy + 'px';
         if (sliderCount === 1) {
-            sliderImgContainer.classList.remove('left-bg-pos');
-            sliderImgContainer.classList.add('center-bg-pos');
             sliderCount = 2;
             sliderPageName.textContent = 'Picto';
             sliderSquare1.classList.remove('slider__state-square--active');
@@ -419,8 +420,6 @@ function runEverything(){
             fileSize = '6.2 MB';
         }
         else if (sliderCount === 2) {
-            sliderImgContainer.classList.remove('center-bg-pos');
-            sliderImgContainer.classList.add('right-bg-pos');
             sliderCount = 3;
             sliderPageName.textContent = 'Sonora';
             sliderSquare2.classList.remove('slider__state-square--active');
@@ -429,16 +428,15 @@ function runEverything(){
             downloadPSD.setAttribute('href', 'sonora/Sonor-home1.psd');
             fileSize = '14.3 MB';
         }
-        // else if (sliderCount === 3) {
-        //     sliderImgContainer.classList.remove('right-bg-pos');
-        //     sliderImgContainer.classList.add('left-bg-pos');
-        //     sliderCount = 1;
-        //      sliderPageName.textContent = 'U.Flowers';
-          // sliderSquare2.classList.remove('slider__state-square--active');
-          // sliderSquare1.classList.add('slider__state-square--active');
-          // showPage.setAttribute('href', 'utopic-flowers/index.html');
-          // downloadPSD.setAttribute('href', 'utopic-flowers/utopic-flowers.psd');
-        // }
+        else if (sliderCount === 3) {
+            sliderCount = 1;
+            sliderPageName.textContent = 'U.Flowers';
+            sliderSquare3.classList.remove('slider__state-square--active');
+            sliderSquare1.classList.add('slider__state-square--active');
+            showPage.setAttribute('href', 'utopic-flowers/index.html');
+            downloadPSD.setAttribute('href', 'utopic-flowers/utopic-flowers.psd');
+            fileSize = '1.8 MB';
+        }
     }, false);
     pl.addEventListener('click', function() {
         isPolish = true;
@@ -514,6 +512,7 @@ function runEverything(){
     submit.addEventListener('click', function (ev) {
         ev.preventDefault();
     },false);
+
     function ajaxInit(){
         try{
             XHR = new XMLHttpRequest();

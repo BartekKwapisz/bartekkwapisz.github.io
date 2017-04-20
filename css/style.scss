@@ -129,7 +129,7 @@ i {
   opacity: .8;
 }
 .container {
-  height: 80%}
+  height: 80%;}
 
 .menu {
   background-color: $menu-color;
@@ -193,10 +193,6 @@ i {
   float: right;
   font-size: 7vh;
   margin-right: 10px;
-  color: $content-color !important;
-}
-.font-size {
-  text-decoration: none !important;
 }
 
 .cv:hover {
@@ -264,6 +260,12 @@ i {
       text-decoration: underline;
     }
   }
+  .font-size {
+    color: $content-color;
+  }
+  .font-size:hover {
+    text-decoration: none;
+  }
 }
 
 .content-skills {
@@ -292,6 +294,12 @@ i {
   i {
     text-shadow: none;
   }
+  .font-size {
+    color: $content-color;
+  }
+  .font-size:hover {
+    text-decoration: none;
+  }
 }
 
 .content-contact {
@@ -319,7 +327,7 @@ i {
 }
 
   fieldset {
-	border: none !important;
+	border: none;
 	min-width: 100%;
 	padding: 0;
 	width: 100%;
@@ -330,7 +338,6 @@ i {
 	margin:0 0 2px;
 	padding: 5px;
   font-size:2vh;
-
   }
 
   #contact textarea {
@@ -455,7 +462,6 @@ i {
         cursor: pointer;
     }
     .left-arrow {
-
         width:0;
         height:0;
         border-right: 30px solid $white;
@@ -497,6 +503,7 @@ i {
   .right-bg-pos {
       background-position: right;
   }
+
 
   p{
     text-align: center;
@@ -544,7 +551,9 @@ i {
 
 }
 
-@media all and (max-width: 640px) {
+
+
+@media all and (max-width: 1000px) {
 
   .header {
     height: 10%;}
@@ -639,7 +648,8 @@ i {
     width: 75%;}
 
   .lang {
-    width: 25%;}
+    width: 25%;
+    ;}
 
 }
 @media all and (max-width: 332px) {
@@ -648,6 +658,14 @@ i {
     overflow: auto;
   }
 }
+
+@-moz-document url-prefix() {
+   @media all and (max-width: 1000px) {
+      .lang {
+          img {max-height: 48px;} //fix issue with language flag height
+      }
+   }
+ }
 //end of media queries
 
 ol {
@@ -682,7 +700,7 @@ ol {
 
       ul {
         bottom: 100%;
-        max-height: 300px; //this coulde be removed
+        max-height: 300px; //this can be removed
         transform: scaleY(1);
         visibility: visible;}
     ;}
