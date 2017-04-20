@@ -1,0 +1,295 @@
+/*Estonia style*/
+body,html{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  voice-family: male;
+  richness: 80;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+body{
+  background-color: #8CB2FF;
+  font-family:"Andale Mono", "Lucida Console", monospace ;
+  color: #333333;
+}
+img,embed,object,video{
+  max-width: 100%; /*to disable stretching through screen*/
+}
+h1{
+  text-align: center;
+  margin: 3%;
+}
+h4{
+  display: inline;
+  float:right;
+  padding:15px;
+}
+.themes{
+  float: left;
+  left: 15px;
+}
+.main-photo__img_oval{
+  margin: 0 auto;
+  width:281px;
+}
+p{
+  display:inline-block;
+  font-size: 40px;
+  color: #FFFFFF;
+}
+.main-photo{
+  border-radius: 250px;
+  display:inline-block;
+}
+.photo_oval{
+  width:210px;
+  height:210px;
+  border-radius: 250px;
+  border:3px solid #FFFFFF;
+  display:inline-block;
+}
+ul {
+  width:100%;
+  margin:0 auto;
+  margin-top: 3%;
+  padding:0;
+  list-style-type:none;
+  font-size: 2.5em;
+  text-align: center;
+}
+ul li:first-child {
+  width:90px;
+}
+ul > li {
+  display:inline-block;
+  width:270px;
+}
+@media screen and (max-width: 693px) {
+  ul > li {
+      width:350px;
+  }
+  ul li:first-child {
+       width:350px;
+  }
+}
+a, a:active, a:visited, a:focus {
+  color: #333333;
+  text-decoration:none;
+  outline: 0;
+}
+a:hover {
+  color: #FFFFFF;
+  text-decoration:none;
+}
+.main-menu li:before {
+   color: #FFFFFF;
+   content: "[" ;
+}
+.main-menu li:after {
+   color: #FFFFFF;
+   content: "]" ;
+}
+.box{
+  margin:0 auto;
+  margin-top:3%;
+  width:73%;
+  border: 3px solid white;
+  padding-left:22px;
+  padding-right:22px;
+  padding-bottom:12px;
+}
+.unwrap{
+  overflow-wrap: break-word;
+}
+@media screen and (max-width: 609px) {
+  .box{
+    width:90%;
+  }
+  .box h3{
+    font-size:1.3em;
+  }
+}
+.white{
+  color: #FFFFFF;
+}
+
+figure{
+  display:inline-block;
+  margin:15px;
+}
+figcaption{
+  margin-top: 10px;
+}
+.thumb:hover{
+  outline: 3px solid #FFFFFF;
+}
+.images{
+  vertical-align:middle; text-align:center;
+  margin:-20px;
+}
+#en:hover{
+  cursor: pointer;
+}
+.arrow:hover{
+  cursor: pointer;
+}
+@media screen and (max-width: 609px) {
+    .desc4phone{
+      position:relative;
+    }
+    .desc4phone:hover::after{
+      position:absolute;
+      top:-250px;
+      left:0;
+      background: #444;
+      padding:5px;
+      color: #FFFFFF;
+    }
+    figcaption{
+      font-size: 25px;
+    }
+    figcaption:before{
+      content: "[" ;
+      color: #FFFFFF;
+    }
+    figcaption span:after{
+      content: "]" ;
+      color: #FFFFFF;
+    }
+    figcaption:hover{
+      cursor: pointer;
+      color: #FFFFFF;
+    }
+    .fcc:hover::after{
+        content: "Free Code Camp Front End Develompent Certification Final Projects";
+    }
+    .natf:hover::after{
+        content: "December 2016 Site for friend";
+    }
+    .jarz:hover::after{
+        content: "October 2014 Funny site for dad's kiosk";
+    }
+    .gith:hover::after{
+        content: "My GitHub profile";
+    }
+    .cwrs:hover::after{
+        content: "My Codewars profile";
+    }
+    .spoj:hover::after{
+        content: "My Sphere Online Judge profile";
+    }
+    .codp:hover::after{
+        content: "My CodePen profile";
+    }
+}
+.container {
+  position: relative;
+  width: 100%;
+  background-color: blue;
+  padding:0;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease-out;
+  background-color: #8CB2FF;
+}
+.container:hover .overlay {
+  opacity: 0.95;
+}
+.container:hover{
+  outline: 3px solid #FFFFFF;
+}
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color:#333333;
+  line-height: 25px;
+}
+h3{
+  line-height: 35px;
+}
+#menu {
+    margin:0 auto;
+    list-style-type:none;
+}
+      /* naprawa wysokości elementu - ol */
+#menu:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+      /* wygląd elementów - li */
+#menu > li > ol >li:hover {
+    cursor: pointer;
+    color:white;
+}
+#menu > li > ol >li {
+    padding:10px;
+    transition: background-color;
+    transition-duration:400ms;
+    -webkit-transition-duration:400ms;
+}
+      /* -------------------- ROZWIJANA CZĘŚĆ MENU CSS -------------------- */
+      /* wygląd elementów - li - rodzica każdej części rozwijanej menu CSS */
+#menu > li {
+    position:relative;
+    transition-duration:400ms;
+    -webkit-transition-duration:500ms;
+    background-color:#8CB2FF;
+    width:110px;
+}
+      /* wygląd elementów - ul */
+#menu > li > ol {
+      right:0;
+      width: 100%;
+      visibility:hidden;
+      -webkit-transform:scaleY(0);
+          -ms-transform:scaleY(0);
+              transform:scaleY(0);
+      -webkit-transform-origin:50% 100% 0;
+          -ms-transform-origin:50% 100% 0;
+              transform-origin:50% 100% 0;
+      position:absolute;
+      transition:250ms;
+      z-index:1;
+      margin:0;
+      left: -10px;
+      padding:0;
+      list-style-type:none;
+      bottom: 100%;
+      background-color:#8CB2FF;
+}
+      /* wygląd elementów - ul - po najechaniu kursorem myszki na element - li */
+#menu > li:hover > ol { ;
+      visibility:visible;
+      -webkit-transform:scaleY(1);
+          -ms-transform:scaleY(1);
+              transform:scaleY(1);
+      }
+      .tooltip > .tooltip-inner {
+            background-color:#8CB2FF;
+            font-size: 15px;
+            font-family:"Andale Mono", "Lucida Console", monospace ;
+      }
+      .tooltip.right {
+        -ms-transform: translate(30px, -40px);
+        -webkit-transform: translate(30px, -40px);
+        transform: translate(30px, -40px);
+       }
+      .tooltip-arrow {
+        display:none;
+      }

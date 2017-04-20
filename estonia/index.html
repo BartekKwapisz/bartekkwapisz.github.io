@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>resume</title>
+      <meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta charset="utf-8">
+      <meta name="description" content="My online resume">
+      <meta name="keywords" content="CV, resume, portfolio, Bartek, Kwapisz, HTML, CSS, JS, front-end">
+      <meta name="author" content="Bartek Kwapisz">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link id="stylesheet" href="css/style.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image/png" href="favicon.ico">
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap-tooltip.js"></script>
+      <script src="js/basic.js"></script>
+  </head>
+  <body>
+
+      <h1>Bartek Kwapisz</h1>
+      <div class="main-photo__img_oval">
+        <p><a id="left-arrow" class="arrow">&#60;</a></p>
+        <div class="photo_oval">
+          <img class='main-photo' src="img/bartek.jpg" alt="my photo" title="me so nice :)">
+        </div>
+        <p><a id="right-arrow" class="arrow">&#62;</a></p>
+      </div>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="cv" id="cv" class="navBtn">CV</a></li>
+          <li><a href="skills" id="skills" class="navBtn">Skills</a></li>
+          <li><a href="portfolio" id="portfolio" class="navBtn">Portfolio</a></li>
+        </ul>
+        <div id = "article-wrap">
+        <article class = "default">
+        </article>
+        <h4 class="themes">
+            <ol id="menu">
+              <li><a href="themes" class="last" target="_blank" id="themes" data-toggle="tooltip" data-placement="right" title='You see page in "Estonia" mode now'>Themes</a>
+                <ol>
+                  <li>Estonia</li>
+                  <li id="go-to-metro">Metro</li>
+                  <li>Gimmick</li>
+                </ol>
+              </li>
+            </ol>
+        </h4>
+        <h4 id="lang" class="last"><span class="white last">EN</span>/<a id="pl" class="last">PL</a></h4>
+        </div>
+      </nav>
+  </body>
+</html>
