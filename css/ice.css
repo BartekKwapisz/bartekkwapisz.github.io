@@ -77,16 +77,18 @@ a {
 .logo {
   align-items: center;
   background-color: #6096ba;
+  background-image: url("../img/ice.jpg");
   display: flex;
   font-weight: bold;
   letter-spacing: 2vw;
   padding-left: 10%;
-  transition: background-color;
-  transition-duration: 300ms; }
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out; }
 
 .logo:hover {
   cursor: pointer;
-  background-color: #4e8ab2; }
+  background-color: #4e8ab2;
+  background-image: url("../img/ice-darker.jpg"); }
 
 i {
   text-shadow: 4px 4px 5px #afecff; }
@@ -415,7 +417,7 @@ i {
 
 .info {
   align-items: center;
-  background-color: #49c267;
+  background-color: #e0faf6;
   display: flex;
   font-size: 3vh; }
   .info i {
@@ -488,6 +490,30 @@ i {
     padding-top: 0;
     width: 25%; }
 
+  .cv {
+    background: linear-gradient(145deg, #1e5961, #c4e8ed); }
+
+  .portfolio {
+    background: linear-gradient(225deg, #2426c4, #c0c1f4); }
+
+  .contact {
+    background: linear-gradient(145deg, #f7d648, #fbecaa); }
+
+  .skills {
+    background: linear-gradient(225deg, #7dd169, #c1e9b7); }
+
+  .cv:hover {
+    background: linear-gradient(145deg, #0c2327, #c4e8ed); }
+
+  .portfolio:hover {
+    background: linear-gradient(225deg, #181983, #ececfb); }
+
+  .contact:hover {
+    background: linear-gradient(145deg, #e8be0a, #fdf7db); }
+
+  .skills:hover {
+    background: linear-gradient(225deg, #50b638, #e2f5de); }
+
   .menu i {
     font-size: 6vh; }
 
@@ -506,7 +532,12 @@ i {
     font-size: 4vh;
     letter-spacing: normal;
     padding-left: 0;
-    width: 75%; }
+    width: 75%;
+    background-image: none;
+    transition: background-color;
+    transition-duration: 300ms; }
+    .logo:hover {
+      background-image: none; }
 
   .lang {
     width: 25%; } }

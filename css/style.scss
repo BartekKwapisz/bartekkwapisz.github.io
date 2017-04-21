@@ -94,17 +94,19 @@ a {
 .logo {
   align-items: center;
   background-color: $logo-color;
+  background-image: url('../img/dust.png');
   display: flex;
   font-weight: bold;
   letter-spacing: 2vw;
   padding-left: 10%;
-  transition: background-color;
-  transition-duration: 300ms;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
   }
 
 .logo:hover {
   cursor: pointer;
-  background-color: darken($logo-color, 5%);}
+  background-color: darken($logo-color, 5%);
+  background-image: url('../img/dust-darker.png');}
 
 i {
   text-shadow: 4px 4px 5px $black;}
@@ -112,6 +114,7 @@ i {
 
 .lang {
   background-color: $lang-color;
+  background-image: url('../img/dust.png');
   justify-content: space-around;
 
   img {
@@ -133,7 +136,7 @@ i {
 
 .menu {
   background-color: $menu-color;
-  // background-image: url('../img/felt.jpg'); this for gimmick
+  background-image: url('../img/egg.png');
   // background-repeat: repeat-x;
   display: flex;
   flex-wrap: wrap;
@@ -645,11 +648,17 @@ i {
     font-size: 4vh;
     letter-spacing: normal;
     padding-left: 0;
-    width: 75%;}
+    width: 75%;
+    background-image:none;
+    transition: background-color;
+    transition-duration: 300ms;
+    &:hover {
+      background-image:none;}
+    }
 
   .lang {
     width: 25%;
-    ;}
+    background-image:none;}
 
 }
 @media all and (max-width: 332px) {

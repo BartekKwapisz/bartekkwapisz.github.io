@@ -96,17 +96,19 @@ a {
 .logo {
   align-items: center;
   background-color: $logo-color;
+  background-image: url('../img/ice.jpg');
   display: flex;
   font-weight: bold;
   letter-spacing: 2vw;
   padding-left: 10%;
-  transition: background-color;
-  transition-duration: 300ms;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
   }
 
 .logo:hover {
   cursor: pointer;
-  background-color: darken($logo-color, 5%);}
+  background-color: darken($logo-color, 5%);
+  background-image: url('../img/ice-darker.jpg');}
 
 
 i {
@@ -140,7 +142,6 @@ i {
   flex-wrap: wrap;
   font-weight: bold;
   width: 50%;
-
   i {
     font-size: 15vh;}
   }
@@ -540,7 +541,7 @@ i {
 
 .info {
   align-items: center;
-  background-color: darken($content-color, 15%);
+  background-color: $brown;
   display: flex;
   font-size: 3vh;
 
@@ -627,6 +628,34 @@ i {
     margin: 0;
     padding-top: 0;
     width: 25%;}
+    .cv {
+
+      background: linear-gradient(145deg, $cv-color, lighten($cv-color, 60%));
+      }
+
+    .portfolio {
+      background: linear-gradient(225deg, $portfolio-color, lighten($portfolio-color, 40%));
+      }
+
+    .contact {
+      background: linear-gradient(145deg, $contact-color, lighten($contact-color, 20%));
+      }
+
+    .skills {
+      background: linear-gradient(225deg, $skills-color, lighten($skills-color, 20%));
+      }
+
+    .cv:hover {
+      background: linear-gradient(145deg, darken($cv-color, 15%), lighten($cv-color, 60%));}
+
+    .portfolio:hover {
+      background: linear-gradient(225deg, darken($portfolio-color, 15%), lighten($portfolio-color, 50%));}
+
+    .contact:hover {
+      background: linear-gradient(145deg, darken($contact-color, 15%), lighten($contact-color, 30%));}
+
+    .skills:hover {
+      background: linear-gradient(225deg, darken($skills-color, 15%), lighten($skills-color, 30%));}
 
   .menu i {
     font-size: 6vh;}
@@ -646,7 +675,13 @@ i {
     font-size: 4vh;
     letter-spacing: normal;
     padding-left: 0;
-    width: 75%;}
+    width: 75%;
+    background-image:none;
+    transition: background-color;
+    transition-duration: 300ms;
+    &:hover {
+      background-image:none;}
+  }
 
   .lang {
     width: 25%;}
