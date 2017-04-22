@@ -122,7 +122,7 @@ function runEverything(){
     window.addEventListener('hashchange', reactToBrowserButtons);
     home.addEventListener('click', function() {
         if (window.location.hash !== '')
-            window.location.hash = 'home'; //może to zmień na window.location.href na serwerze
+            window.location.hash = 'home';
     }, false);
     cv.addEventListener('click', function() {
         window.location.hash = 'cv';
@@ -133,7 +133,7 @@ function runEverything(){
     // preventing bug with relative height on IE and Firefox
     // stackoverflow.com/questions/35532987/heights-rendering-differently-in-chrome-and-firefox
     var isChrome = !!window.chrome && !!window.chrome.webstore;
-    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === '[object SafariRemoteNotification]'; })(!window['safari'] || safari.pushNotification);
     if(isChrome || isSafari) {
         document.addEventListener('keyup', function (ev) {
             if(ev.keyCode === 65) {
@@ -151,9 +151,8 @@ function runEverything(){
     for (let i = 0; i < changeFontSize.length; i++) {
         changeFontSize[i].addEventListener('click', function() {
             if(fontClickCounter%2 === 0) {
-                contentSkillsParagraph.style.fontSize = '4vh'; //DISTORTIONS IN FIREFOX!!!
-                // stackoverflow.com/questions/35532987/heights-rendering-differently-in-chrome-and-firefox
-                contentCvParagraph.style.fontSize = '4vh';  //DISTORTIONS IN FIREFOX!!!
+                contentSkillsParagraph.style.fontSize = '4vh';
+                contentCvParagraph.style.fontSize = '4vh';
                 for(let j = 0; j < changeFontSize.length; j++){
                     changeFontSize[j].textContent = 'a-';}
                 fontClickCounter++; }

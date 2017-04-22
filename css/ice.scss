@@ -96,19 +96,17 @@ a {
 .logo {
   align-items: center;
   background-color: $logo-color;
-  background-image: url('../img/ice.jpg');
   display: flex;
   font-weight: bold;
   letter-spacing: 2vw;
   padding-left: 10%;
-  -webkit-transition: background-image 0.2s ease-in-out;
-  transition: background-image 0.2s ease-in-out;
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
   }
 
 .logo:hover {
   cursor: pointer;
-  background-color: darken($logo-color, 5%);
-  background-image: url('../img/ice-darker.jpg');}
+  background-color: darken($logo-color, 5%);}
 
 
 i {

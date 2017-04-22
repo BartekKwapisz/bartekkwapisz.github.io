@@ -8,11 +8,13 @@ html {
 body {
   color: #fff;
   font-family: 'Dosis', sans-serif;
-  position: fixed;
+  font-size: 5vh;
   overflow: hidden;
-  font-size: 5vh; }
+  position: fixed; }
 
 * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   box-sizing: border-box; }
@@ -82,14 +84,18 @@ a {
   font-weight: bold;
   letter-spacing: 2vw;
   padding-left: 10%;
-  -webkit-transition: background-image 0.2s ease-in-out;
-  transition: background-image 0.2s ease-in-out; }
-
+  -webkit-transition: background .2s ease-in-out;
+  transition: background .2s ease-in-out; }
+@-moz-document url-prefix() {
+  .logo {
+    background-image: none; } }
 .logo:hover {
-  cursor: pointer;
   background-color: #485f92;
-  background-image: url("../img/dust-darker.png"); }
-
+  background-image: url("../img/dust-darker.png");
+  cursor: pointer; }
+@-moz-document url-prefix() {
+  .logo:hover {
+    background-image: none; } }
 i {
   text-shadow: 4px 4px 5px #000; }
 
@@ -97,6 +103,9 @@ i {
   background-color: #3b3742;
   background-image: url("../img/dust.png");
   justify-content: space-around; }
+@-moz-document url-prefix() {
+  .lang {
+    background-image: none; } }
   .lang img {
     width: 30%; }
   .lang img:hover {
@@ -134,8 +143,8 @@ i {
   cursor: pointer; }
 
 .cv {
-  display: flex;
   background-color: #86dae6;
+  display: flex;
   margin: 8% 5% 2% 10%; }
 
 .portfolio {
@@ -184,8 +193,8 @@ i {
   box-shadow: 0 8px 6px -6px #000;
   padding-bottom: 5px;
   padding-left: 10px;
-  width: 80%;
-  transition: all 0.3s linear; }
+  transition: all .3s linear;
+  width: 80%; }
   .content-landing-page img:nth-child(2) {
     display: none; }
   .content-landing-page img {
@@ -193,17 +202,17 @@ i {
     float: right;
     margin-left: 5px; }
   .content-landing-page p {
+    clear: both;
     display: inline;
-    font-size: 5vh;
-    clear: both; }
+    font-size: 5vh; }
 
 .content-cv {
   background-color: #b0c249;
   box-shadow: 0 8px 6px -6px #000;
   height: 93%;
   overflow: auto;
-  width: 93%;
-  transition: all 0.3s linear; }
+  transition: all .3s linear;
+  width: 93%; }
   .content-cv p {
     font-size: 3vh;
     margin: 0;
@@ -223,8 +232,8 @@ i {
   box-shadow: 0 8px 6px -6px #000;
   height: 93%;
   overflow: auto;
-  width: 93%;
-  transition: all 0.3s linear; }
+  transition: all .3s linear;
+  width: 93%; }
   .content-skills p {
     font-size: 3vh;
     margin: 0;
@@ -247,45 +256,45 @@ i {
   box-shadow: 0 8px 6px -6px #000;
   height: 93%;
   overflow: auto;
-  width: 93%;
-  transition: all 0.3s linear; }
+  transition: all .3s linear;
+  width: 93%; }
   .content-contact p {
     font-size: 3vh;
     margin: 0;
+    padding-bottom: 2px;
     padding-left: 10px;
     padding-top: 5px;
-    padding-bottom: 2px;
     text-align: center; }
   .content-contact .contact-form-container {
-    max-width: 90%;
-    width: 100%;
     margin: 0 auto;
-    position: relative; }
+    max-width: 90%;
+    position: relative;
+    width: 100%; }
   .content-contact fieldset {
-    border: none;
+    border: 0;
     min-width: 100%;
     padding: 0;
     width: 100%; }
   .content-contact #contact input[type="text"], .content-contact #contact input[type="email"], .content-contact #contact input[type="tel"], .content-contact #contact textarea {
-    width: 100%;
+    font-size: 2vh;
     margin: 0 0 2px;
     padding: 5px;
-    font-size: 2vh; }
+    width: 100%; }
   .content-contact #contact textarea {
-    min-height: 100px;
+    -moz-appearance: textfield;
     max-width: 100%;
-    resize: none;
+    min-height: 100px;
     margin-top: 13px;
-    -moz-appearance: textfield; }
+    resize: none; }
   .content-contact #contact button[type="submit"] {
-    cursor: pointer;
-    width: 50%;
-    border: none;
     background: #c9d582;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 3vh;
     margin: 13px 25% 10px;
     padding: 10px;
-    font-size: 3vh;
-    color: #fff; }
+    width: 50%; }
   .content-contact #contact button[type="submit"]:hover {
     background: #b79606;
     transition: background-color 0.3s ease-in-out; }
@@ -299,7 +308,7 @@ i {
   background-color: #b0c249;
   box-shadow: 0 8px 6px -6px #000;
   justify-content: space-around;
-  transition: all 0.3s linear; }
+  transition: all .3s linear; }
   .content-portfolio a {
     color: #fff;
     text-decoration: none; }
@@ -313,8 +322,8 @@ i {
   .content-portfolio .close:hover {
     color: #d9d9d9; }
   .content-portfolio i {
-    transition: all .2s ease-out;
-    font-size: 11vh; }
+    font-size: 11vh;
+    transition: all .2s ease-out; }
   .content-portfolio i:hover {
     transform: scale(1.2); }
   .content-portfolio .portfolio-item {
@@ -330,32 +339,32 @@ i {
       outline: 0; }
 
 .modal {
-  z-index: 999;
-  position: fixed;
   background-color: #b0c249;
-  top: 50%;
-  left: 75%;
-  transform: translateX(-50%) translateY(-50%);
-  height: 400px;
-  width: 22.5%;
-  min-width: 240px;
   display: flex;
   flex-direction: column;
-  transition: opacity .5s ease-in; }
+  height: 400px;
+  left: 75%;
+  min-width: 240px;
+  position: fixed;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: opacity .5s ease-in;
+  width: 22.5%;
+  z-index: 999; }
   .modal h5 {
-    margin-top: 0;
     align-self: center;
+    margin-top: 0;
     margin-bottom: 10px; }
   .modal .slider__state-container {
+    align-self: center;
     display: flex;
-    flex-direction: row;
-    align-self: center; }
+    flex-direction: row; }
   .modal .slider__state-square {
-    width: 15px;
-    height: 10px;
     border: 2px solid #fff;
+    height: 10px;
     margin-right: 5px;
-    margin-top: 10px; }
+    margin-top: 10px;
+    width: 15px; }
   .modal .slider__state-square--active {
     background-color: #fff; }
   .modal .slider {
@@ -407,13 +416,13 @@ i {
       text-decoration: underline; }
 
 .shadow {
-  z-index: 500;
-  position: fixed;
-  width: 50%;
-  height: 80%;
-  top: 10%;
   background: rgba(0, 0, 0, 0.6);
-  transition: opacity .5s ease-in; }
+  height: 80%;
+  position: fixed;
+  top: 10%;
+  transition: opacity .5s ease-in;
+  width: 50%;
+  z-index: 500; }
 
 .footer {
   height: 10%; }
@@ -485,8 +494,8 @@ i {
     left: 50%; }
 
   .shadow {
-    width: 100%;
-    height: 100%; }
+    height: 100%;
+    width: 100%; }
 
   .menu {
     height: 17%;

@@ -77,18 +77,16 @@ a {
 .logo {
   align-items: center;
   background-color: #6096ba;
-  background-image: url("../img/ice.jpg");
   display: flex;
   font-weight: bold;
   letter-spacing: 2vw;
   padding-left: 10%;
-  -webkit-transition: background-image 0.2s ease-in-out;
-  transition: background-image 0.2s ease-in-out; }
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out; }
 
 .logo:hover {
   cursor: pointer;
-  background-color: #4e8ab2;
-  background-image: url("../img/ice-darker.jpg"); }
+  background-color: #4e8ab2; }
 
 i {
   text-shadow: 4px 4px 5px #afecff; }
