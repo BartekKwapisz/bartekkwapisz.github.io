@@ -26,6 +26,9 @@ $(document).ready(function() {
     $('#go-to-metro').click(function() {
         window.open('https://bartekkwapisz.github.io/');
     });
+    $('#go-to-metro').click(function() {
+        window.open('http://bartekkwapisz.co.nf/');
+    });
     $('.arrow').click(function() {
         if(selectImage === 0)
             selectImage++;
