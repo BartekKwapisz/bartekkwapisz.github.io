@@ -26,8 +26,8 @@ $(document).ready(function() {
     $('#go-to-metro').click(function() {
         window.open('https://bartekkwapisz.github.io/');
     });
-    $('#go-to-metro').click(function() {
-        window.open('http://bartekkwapisz.co.nf/');
+    $('#go-to-gimmick').click(function() {
+        window.open('../gimmick/index.html');
     });
     $('.arrow').click(function() {
         if(selectImage === 0)
