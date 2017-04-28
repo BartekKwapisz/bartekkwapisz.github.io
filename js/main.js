@@ -487,13 +487,7 @@ function runEverything(){
         if(isPolish)
             changeInfoOnHover('Użyj kafelków w lewym panelu do nawigacji');
     }, false);
-    gimmick.addEventListener('click', function() {
-        if(!isPolish)
-            changeInfoOnHover('This version is under construction, come back later');
-        if(isPolish)
-            changeInfoOnHover('Ta wersja dopiero powstaje, wróć później');
-    }, false);
-    gimmick.addEventListener('mouseleave', function() {
+    gimmick.addEventListener('mouseleave', function() { 
         if(!isPolish)
             changeInfoOnHover('Click on tiles from left panel to change content');
         if(isPolish)
