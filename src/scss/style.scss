@@ -37,6 +37,9 @@ a {
 a,
 a:active,
 a:focus,
+button,
+button:active,
+button:focus,
 input,
 input:active,
 input:focus {
@@ -74,53 +77,115 @@ button {
   }
 }
 
+button::-moz-focus-inner {
+  border: 0;
+}
+
 .family-member {
-  background-color: $green1;
+  background-color: $blue1;
+
   border-radius: 10px;
-  color: $green6;
-  display: flex;
+  color: $blue6;
+  display: inline-flex;
   font-size: 2rem;
   line-height: 1.2;
+
   text-align: center;
-  width: 260px;
 
   article {
     flex-direction: column;
+    padding: 10px;
     position: relative;
-    width: 130px;
+
+    input {
+      font-size: 2.5rem;
+      -webkit-appearance: none;
+      border: none;
+      border-radius: 5px;
+      background-image: none;
+      background-color: $blue3;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      max-width: 150px;
+      text-indent: 10px;
+    }
+
+    input:last-of-type {
+      font-size: 2.3rem;
+    }
+    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $blue2;
+    }
+    input::-moz-placeholder { /* Firefox 19+ */
+      color: $blue2;
+    }
+    input:-ms-input-placeholder { /* IE 10+ */
+      color: $blue2;
+    }
+    input:-moz-placeholder { /* Firefox 18- */
+      color: $blue2;
+    }
   }
 
-  i:first-child {
-    left: 0;
+  .icon-cancel-circled,
+  .icon-minus-circled,
+  .icon-ok-circled {
     position: absolute;
+    top: 0;
     transition: all .2s ease-out;
 
     &:hover {
-      color: lighten($green6, 10%);
+      color: lighten($blue6, 50%);
+      cursor: pointer;
     }
   }
 
-  i:last-of-type {
+  .icon-user {
     font-size: 6rem;
   }
 
-  article:last-child {
-    border-left: 1px dashed $green5;
-    span {
-      font-size: 2.5rem;
+  .icon-male, .icon-female {
+    font-size: 5rem;
+    transition: all .2s ease-out;
+    &:hover {
+      color: lighten($blue6, 50%);
+      cursor: pointer;
     }
   }
-}
+  .icon-cancel-circled {
+    left: 0;
+  }
 
-.deceased {
-  background-color: $blue1;
-  color: $blue6;
-
-  i:first-child:hover {
-    color: lighten($blue6, 10%);
+  .icon-minus-circled, .icon-ok-circled {
+    right: 0;
   }
 
   article:last-child {
     border-left: 1px dashed $blue5;
+    span {
+      font-size: 2.5rem;
+    }
+    span:last-of-type {
+      font-size: 2.3rem;
+    }
+  }
+}
+
+.alive {
+
+  background-color: $green1;
+  color: $green6;
+  .icon-cancel-circled:hover,
+  .icon-ok-circled:hover,
+  .icon-minus-circled:hover,
+  .icon-male:hover,
+  .icon-female:hover
+   {
+    color: lighten($green6, 10%);
+  }
+
+  article:last-child {
+    border-left: 1px dashed $green5;
   }
 }

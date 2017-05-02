@@ -1,4 +1,9 @@
 
 .icon-user:before { content: '\e800'; } /* '' */
 .icon-cancel-circled:before { content: '\e801'; } /* '' */
+.icon-ok-circled:before { content: '\e802'; } /* '' */
+.icon-minus-circled:before { content: '\e803'; } /* '' */
+.icon-export-alt:before { content: '\f14d'; } /* '' */
+.icon-female:before { content: '\f182'; } /* '' */
+.icon-male:before { content: '\f183'; } /* '' */
 .icon-user-plus:before { content: '\f234'; } /* '' */
