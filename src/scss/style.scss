@@ -81,15 +81,41 @@ button::-moz-focus-inner {
   border: 0;
 }
 
+.short-family-member {
+  background-color: $blue1;
+  border-radius: 5px;
+  color: $blue6;
+  display: inline-flex;
+  font-size: 2rem;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+
+  i {
+    font-size: 3.5rem;
+  }
+
+  .icon-export-alt {
+    font-size: 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .2s ease-out;
+
+    &:hover {
+      color: lighten($blue6, 50%);
+      cursor: pointer;
+    }
+  }
+}
+
 .family-member {
   background-color: $blue1;
-
   border-radius: 10px;
   color: $blue6;
   display: inline-flex;
   font-size: 2rem;
   line-height: 1.2;
-
   text-align: center;
 
   article {
@@ -188,4 +214,8 @@ button::-moz-focus-inner {
   article:last-child {
     border-left: 1px dashed $green5;
   }
+}
+
+.no-display {
+  display: none;
 }
