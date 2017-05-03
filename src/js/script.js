@@ -30,7 +30,9 @@ function addEventListeners (id, shortID) {
   var minimize = section.querySelector('.minimize');
   var enlarge = shortSection.querySelector('.enlarge');
   var name = section.querySelector('.name');
+  var shortName = shortSection.querySelector('.short-name');
   var surname = section.querySelector('.surname');
+  var shortSurname = shortSection.querySelector('.short-surname');
   var status = section.querySelector('.status');
   var born = section.querySelector('.born');
   var died = section.querySelector('.died');
@@ -41,6 +43,8 @@ function addEventListeners (id, shortID) {
   minimize.addEventListener('click', function() {
     shortSection.classList.remove('no-display');
     section.classList.add('no-display');
+    shortName.innerText = name.value;
+    shortSurname.innerText = surname.value;
   }, false);
   enlarge.addEventListener('click', function() {
     section.classList.remove('no-display');
