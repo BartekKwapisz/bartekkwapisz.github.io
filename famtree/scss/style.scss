@@ -88,8 +88,15 @@ button::-moz-focus-inner {
   display: inline-flex;
   font-size: 2rem;
   padding: 10px;
-  position: relative;
+  position: absolute;
   text-align: center;
+  left: 0;
+  top: 0;
+
+  &:hover {
+    cursor: move;
+    z-index: 1;
+  }
 
   i {
     font-size: 3.5rem;
@@ -116,7 +123,16 @@ button::-moz-focus-inner {
   display: inline-flex;
   font-size: 2rem;
   line-height: 1.2;
+  position: absolute;
+  position: absolute;
+  left: 0;
+  top: 0;
   text-align: center;
+
+  &:hover {
+    cursor: move;
+    z-index: 1;
+  }
 
   article {
     flex-direction: column;
@@ -164,7 +180,7 @@ button::-moz-focus-inner {
     transition: all .2s ease-out;
 
     &:hover {
-      color: lighten($blue6, 50%);
+      color: $red5;
       cursor: pointer;
     }
   }
@@ -178,7 +194,7 @@ button::-moz-focus-inner {
     right: 0;
   }
 
-  article:last-child {
+  .right {
     border-left: 1px dashed $blue5;
 
     span {
@@ -189,6 +205,10 @@ button::-moz-focus-inner {
       font-size: 2.3rem;
     }
   }
+}
+
+.chosen-sex {
+  color: $red5;
 }
 
 .new-input {
@@ -225,7 +245,7 @@ button::-moz-focus-inner {
   }
 
   input::-moz-placeholder { /* Firefox 19+ */
-    color: $blue6; 
+    color: $blue6;
   }
 
   input:-ms-input-placeholder { /* IE 10+ */
@@ -243,15 +263,38 @@ button::-moz-focus-inner {
   color: $green6;
   .icon-cancel-circled:hover,
   .icon-ok-circled:hover,
-  .icon-minus-circled:hover,
-  .icon-male:hover,
-  .icon-female:hover
+  .icon-minus-circled:hover
    {
     color: lighten($green6, 10%);
   }
 
-  article:last-child {
+  .icon-male:hover,
+  .icon-female:hover {
+    color: $red5;
+  }
+
+  .right {
     border-left: 1px dashed $green5;
+  }
+
+  input {
+    background-color: $green1;
+  }
+
+  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $green3;
+  }
+
+  input::-moz-placeholder { /* Firefox 19+ */
+    color: $green3;
+  }
+
+  input:-ms-input-placeholder { /* IE 10+ */
+    color: $green3;
+  }
+
+  input:-moz-placeholder { /* Firefox 18- */
+    color: $green3;
   }
 }
 
