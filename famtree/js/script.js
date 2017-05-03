@@ -10,6 +10,7 @@ function FamilyMember (sex, name, surname, status, born, died) {
   this.died = died;
 }
 var pairs = [];
+var mouseOverInput = false;
 document.getElementById('addFamilyMember').addEventListener('click', addMember, false);
 function addMember() {
   var section = document.createElement('section');
@@ -46,6 +47,20 @@ function addEventListeners (id, shortID) {
     male = section.querySelector('.icon-male'),
     female = section.querySelector('.icon-female'),
     sex = 'unknown';
+  for (var i = 0; i < input.length; i++) {
+    input[i].addEventListener('click', function() {
+      if ( section.classList.contains('approved-input') ) {
+        section.classList.remove('approved-input');
+        section.classList.add('new-input');
+      }
+    }, false);
+    input[i].addEventListener('mouseenter', function() {
+      mouseOverInput = true;
+    }, false);
+    input[i].addEventListener('mouseleave', function() {
+      mouseOverInput = false;
+    }, false);
+  }
   section.addEventListener('mousedown', onDragStart, false);
   shortSection.addEventListener('mousedown', onDragStart, false);
   remove.addEventListener('click', function() {
@@ -78,14 +93,6 @@ function addEventListeners (id, shortID) {
       shortSection.classList.remove('alive');
     }
   }, false);
-  for (var i = 0; i < input.length; i++) {
-    input[i].addEventListener('click', function() {
-      if ( section.classList.contains('approved-input') ) {
-        section.classList.remove('approved-input');
-        section.classList.add('new-input');
-      }
-    }, false);
-  }
   male.addEventListener('click', function() {
     female.classList.remove('chosen-sex');
     male.classList.add('chosen-sex');
@@ -112,9 +119,9 @@ var draggedEl,
 
 onDragStart = function (ev) {
   var boundingClientRect;
-  // if (ev.target.className.indexOf('drag') === -1) {
-  //   return;
-  // }
+  if (mouseOverInput) {
+    return;
+  }
 
   draggedEl = this;
 
