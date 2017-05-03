@@ -124,33 +124,20 @@ button::-moz-focus-inner {
     position: relative;
 
     input {
-      font-size: 2.5rem;
       -webkit-appearance: none;
       border: none;
       border-radius: 5px;
       background-image: none;
-      background-color: $blue3;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       box-shadow: none;
+      font-size: 2.5rem;
       max-width: 150px;
       text-indent: 10px;
     }
 
     input:last-of-type {
       font-size: 2.3rem;
-    }
-    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-      color: $blue2;
-    }
-    input::-moz-placeholder { /* Firefox 19+ */
-      color: $blue2;
-    }
-    input:-ms-input-placeholder { /* IE 10+ */
-      color: $blue2;
-    }
-    input:-moz-placeholder { /* Firefox 18- */
-      color: $blue2;
     }
   }
 
@@ -171,30 +158,82 @@ button::-moz-focus-inner {
     font-size: 6rem;
   }
 
-  .icon-male, .icon-female {
+  .icon-male,
+  .icon-female {
     font-size: 5rem;
     transition: all .2s ease-out;
+
     &:hover {
       color: lighten($blue6, 50%);
       cursor: pointer;
     }
   }
+
   .icon-cancel-circled {
     left: 0;
   }
 
-  .icon-minus-circled, .icon-ok-circled {
+  .icon-minus-circled,
+  .icon-ok-circled {
     right: 0;
   }
 
   article:last-child {
     border-left: 1px dashed $blue5;
+
     span {
       font-size: 2.5rem;
     }
+
     span:last-of-type {
       font-size: 2.3rem;
     }
+  }
+}
+
+.new-input {
+
+  input {
+    background-color: $blue3;
+  }
+
+  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $blue2;
+  }
+
+  input::-moz-placeholder { /* Firefox 19+ */
+    color: $blue2;
+  }
+
+  input:-ms-input-placeholder { /* IE 10+ */
+    color: $blue2;
+  }
+
+  input:-moz-placeholder { /* Firefox 18- */
+    color: $blue2;
+  }
+}
+
+.approved-input {
+
+  input {
+    background-color: $blue1;
+  }
+
+  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $blue6;
+  }
+
+  input::-moz-placeholder { /* Firefox 19+ */
+    color: $blue6;
+  }
+
+  input:-ms-input-placeholder { /* IE 10+ */
+    color: $blue6;
+  }
+
+  input:-moz-placeholder { /* Firefox 18- */
+    color: $blue6;
   }
 }
 
