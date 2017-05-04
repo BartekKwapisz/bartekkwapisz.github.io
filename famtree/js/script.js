@@ -1,7 +1,8 @@
 'use strict';
 var body = document.getElementsByTagName('body')[0];
-var newMember;
-function FamilyMember (sex, name, surname, status, born, died) {
+function FamilyMember (id, shortID, sex, name, surname, status, born, died) {
+  this.id = id;
+  this.shortID = shortID;
   this.sex = sex;
   this.name = name;
   this.surname = surname;
@@ -9,10 +10,12 @@ function FamilyMember (sex, name, surname, status, born, died) {
   this.born = born;
   this.died = died;
 }
-var pairs = [];
-var mouseOverInput = false;
+var pairs = [], //[[id,shortID,posX,posY], [id,shortID,posX,posY], ...]
+  numberOfCreatedFamilyMembers = 0,
+  mouseOverInput = false;
 document.getElementById('addFamilyMember').addEventListener('click', addMember, false);
 function addMember() {
+  numberOfCreatedFamilyMembers++;
   var section = document.createElement('section');
   var shortSection = document.createElement('section');
   section.innerHTML = '<article><i class="demo-icon icon-cancel-circled remove"></i><i class="demo-icon icon-male"></i><i class="demo-icon icon-female"></i><i class="demo-icon icon-minus-circled minimize"></i><p>Born: <br /><input type="text" name="born" class="born" placeholder="31.01.1922"></input></p><p>Died: <br /><input type="text" name="died" class="died" placeholder="empty=alive"></input></p></article><article class="right"><p>Name: <br /><input type="text" name="name" class="name" placeholder="John"></input> <br />Surname: <br /><input type="text" name="surname" class="surname" placeholder="Doe"></input> <br />Status: <br /><input type="text" name="status" class="status" placeholder="Nestor"></input></p><i class="demo-icon icon-ok-circled approve"></i></article>';
@@ -21,13 +24,15 @@ function addMember() {
   shortSection.classList.add('short-family-member', 'no-display');
   section.id = Math.random();
   shortSection.id = Math.random();
-  pairs.push( [section.id, shortSection.id] );
   body.appendChild(section);
   body.appendChild(shortSection);
   addEventListeners(section.id, shortSection.id);
-  var transformCSSValue = 'translateX(' + Math.random() * 400 + 'px) translateY(' + Math.random() * 400 + 'px)';
+  var randomNumberX = Math.random() * 400,
+    randomNumberY = Math.random() * 400,
+    transformCSSValue = 'translateX(' + randomNumberX + 'px) translateY(' + randomNumberY + 'px)';
   section.style.transform = transformCSSValue;
   shortSection.style.transform = transformCSSValue;
+  pairs.push( [section.id, shortSection.id, randomNumberX, randomNumberY] );
 }
 function addEventListeners (id, shortID) {
   var section = document.getElementById(id),
@@ -81,7 +86,7 @@ function addEventListeners (id, shortID) {
     shortSection.classList.add('no-display');
   }, false);
   approve.addEventListener('click', function() {
-    newMember = new FamilyMember(sex, name.value, surname.value, status.value, born.value, died.value);
+    window['familyMemberNumber'+numberOfCreatedFamilyMembers] = new FamilyMember(id, shortID, sex, name.value, surname.value, status.value, born.value, died.value);
     section.classList.remove('new-input');
     section.classList.add('approved-input');
     createMember(id, shortID);
@@ -131,13 +136,14 @@ onDragStart = function (ev) {
   grabPointX = boundingClientRect.left - ev.clientX;
 };
 
+var rect, posX, posY, closestX, closestY;
 onDrag = function (ev) {
   if (!draggedEl) {
     return;
   }
 
-  var posX = ev.clientX + grabPointX,
-    posY = ev.clientY + grabPointY;
+  posX = ev.clientX + grabPointX,
+  posY = ev.clientY + grabPointY;
 
   if (posX < 0) {
     posX = 0;
@@ -146,14 +152,35 @@ onDrag = function (ev) {
   if (posY < 0) {
     posY = 0;
   }
-
+  rect = draggedEl.getBoundingClientRect();
   draggedEl.style.transform = 'translateX(' + posX + 'px) translateY(' + posY + 'px)';
   var transformRelatedSection;
   for ( var i = 0; i < pairs.length; i++) {
-    if ( draggedEl.id === pairs[i][0] ) transformRelatedSection = document.getElementById(pairs[i][1]);
-    else if ( draggedEl.id === pairs[i][1] ) transformRelatedSection = document.getElementById(pairs[i][0]);
+    if ( draggedEl.id === pairs[i][0] ) {
+      transformRelatedSection = document.getElementById(pairs[i][1]);
+      pairs[i][2] = posX;
+      pairs[i][3] = posY;
+    } else if ( draggedEl.id === pairs[i][1] ) {
+      transformRelatedSection = document.getElementById(pairs[i][0]);
+      pairs[i][2] = posX;
+      pairs[i][3] = posY;
+    }
   }
   transformRelatedSection.style.transform = 'translateX(' + posX + 'px) translateY(' + posY + 'px)';
+  var distance = [];
+  for ( var j = 0; j < pairs.length; j++) {
+    if (pairs.length > 1) {
+      distance.push((Math.abs(pairs[j][2] - posX) + Math.abs(pairs[j][3] - posY)));
+    }
+  }
+  var removeZeroFromDistance = distance.filter(function(item) {
+    return item !== 0;
+  });
+  var smallestDistance = Math.min.apply(Math, removeZeroFromDistance);
+  var indexOfPairArrayWithSmallestDistance = distance.indexOf(smallestDistance);
+  closestX = pairs[indexOfPairArrayWithSmallestDistance][2];
+  closestY = pairs[indexOfPairArrayWithSmallestDistance][3];
+  // console.log(rect.top, rect.right, rect.bottom, rect.left);
 };
 
 onDragEnd = function () {
@@ -164,3 +191,19 @@ onDragEnd = function () {
 
 document.addEventListener('mousemove', onDrag, false);
 document.addEventListener('mouseup', onDragEnd, false);
+// var started = false;
+function setup() {
+   createCanvas(windowWidth, windowHeight);
+  //  noLoop();
+}
+function draw() {
+  // if(started){
+  background(170, 98, 98);
+  line(closestX, closestY-50, posX+50, posY-50);
+
+  // }
+}
+// function start(){
+//    started = true;
+//    loop();
+// }
