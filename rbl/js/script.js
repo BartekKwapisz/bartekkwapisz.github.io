@@ -43,8 +43,10 @@ carouselList.mouseover(function() {
 	.mouseout(function() {
 	interval = setInterval(changeSlides, 6000);
 	});
-
+var inClick = false;
 $('.left-arr').click(function(){
+	if(inClick) return;
+    inClick = true;
 	var li = carouselList.find("li");
 	carouselList.css("margin-left", -imgWidth);
 	li.first().before(li.last());
@@ -53,8 +55,11 @@ $('.left-arr').click(function(){
 	});
 	clearInterval(interval);
 	decreaseArticle();
+	setTimeout(function(){ inClick = false; }, 1500);
 })
 $('.right-arr').click(function(){
+	if(inClick) return;
+    inClick = true;
 	var li = carouselList.find("li");
 	carouselList.animate({"marginLeft": -imgWidth}, 1500, function(){
 	li.last().after(li.first());
@@ -62,6 +67,7 @@ $('.right-arr').click(function(){
 	});
 	clearInterval(interval);
 	increaseArticle();
+	setTimeout(function(){ inClick = false; }, 1500);
 })
 var articleNumber = 1;
 function increaseArticle() {
@@ -156,5 +162,21 @@ function changeCarouselDescription() {
 		});
 	}
 }
-// *************************
+// CAROUSEL END
+
+//HAMBURGER
+var clicks = 0;
+var btn = document.querySelector('#checkbox');
+btn.addEventListener('click', function(){
+  if (clicks%2===0) {
+      $('.hamburger-icon').next().css( "transform", "translateX(0)" );
+  } else {
+    $('.hamburger-icon').next().css( "transform", "translateX(100%)" );
+  }
+  clicks++;
+});
+//HAMBURGER END
+
+
+
 });
