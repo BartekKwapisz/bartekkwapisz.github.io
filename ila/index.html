@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#333333">
+    <title>Srebrzyńska B.Kwapisz</title>
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="wz_jsgraphics.js"></script>
+    <script type="text/javascript" src="js/mapper.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <header>
+            <div class="srebrzynska">
+              <img class="logo center-image" src="img/logo.png"/>
+            </div>
+                <nav class="navbar navbar-default" role = "navigation">
+                  <ul class="nav navbar-nav" id="header__navigation">
+                      <li><a href="#"><span>Informacje o osiedlu</span></a></li>
+                      <li><a href="#"><span class="underlined">Znajdź mieszkanie</span></a></li>
+                      <li><a href="#"><span>Galeria</span></a></li>
+                      <li><a href="#"><span>Aktualności</span></a></li>
+                      <li><a href="#"><span>Pomoc</span></a></li>
+                      <li><a href="#"><span>Kontakt</span></a></li>
+                  </ul>
+                </nav>
+            <div class="search">
+                <img class="loupe center-image" src="img/loupe.png"/>
+            </div>
+    </header>
+    <main role="main">
+                    <nav class="navbar navbar-default" role = "navigation">
+                      <ul class="nav navbar-nav">
+                          <li class="flat-browser__navigation--selected col-md-4"><a href="#"><span >Wyszukiwarka graficzna</span></a></li>
+                          <li class="col-md-4"><a href="#"><span>Wyszukiwarka zaawansowana</span></a></li>
+                          <li class="col-md-4"><a href="#"><span>Promocje</span></a></li>
+                      </ul>
+                    </nav>
+            <section class="flat-selection">
+                    <figure>
+                          <figcaption>
+                                <span class="ml-120" id="step">Krok 1 – Wybierz budynek</span>
+                                <span class="back mr-120 no-display">⟵ POWRÓT</span>
+                          </figcaption>
+                          <div class="image-container">
+                                <img class="step1" usemap="#map" src="img/step1.png" />
+                                <img class="step2 no-display" usemap="#map" src="img/step2.png" />
+                                <map name="map">
+                                      <area shape="poly" coords="212,143,171,143,172,160,202,160,208,182,446,181,446,168,456,166,600,167,607,163,607,174,958,176,1122,196,1132,192,1134,184,1213,192,1253,174,1254,160,1169,153,1172,135,1129,143,935,129,476,132,443,140,211,143"  nohref="nohref" class="icolor4286f4" />
+                                </map>
+                                <img class="step3 no-display" usemap="#map" src="img/step3.png" />
+                                <map name="map">
+                                      <area />
+                                </map>
+                                <img class="step4 no-display" usemap="#map" src="img/step4.png" />
+                                <map name="map">
+                                      <area />
+                                </map>
+                          </div>
+                    </figure>
+            </section>
+            <section>
+                  <article class="contact ml-120">
+                            <h3>Chcesz dowiedzieć się więcej?</h3>
+                            <h3>Skontaktuj się z nami.</h3>
+                            <p>
+                              Skorzystaj z formularza kontaktowego lub zadzwoń. Nasz zespół pomoże dobrać najlepszą dla ciebie ofertę mieszkaniową i udzieli niezbędnych informacji.
+                            </p>
+                            <div class="mail">
+                                <img src="img/mail.png"/>
+                                <span>
+                                  kontakt@srebrzynskipark.pl
+                                </span>
+                            </div>
+                            <div class="phone">
+                                <img src="img/phone.png"/>
+                                <span>
+                                  +48 667 977 960
+                                </span>
+                            </div>
+                  </article>
+                  <form>
+                        <h3>Formularz kontaktowy</h3>
+                        <input type="text" placeholder="Imię i nazwisko"/>
+                        <input type="email" placeholder="Adres e-mail"/>
+                        <textarea placeholder="Wiadomość"></textarea>
+                        <input type="submit" value="Wyślij wiadomość"/>
+                  </form>
+            </section>
+            <aside>
+              <p>
+                MADE WITH <span>in</span>VISION
+              </p>
+            </aside>
+    </main>
+    <footer>
+            <div class="newsletter ml-120">
+                  <h3>Newsletter</h3>
+                  <p>
+                    Bądź poinformowany na bieżąco o aktualnościach i ofertach.
+                  </p>
+                  <input type="text" placeholder="Adres e-mail"/>
+                  <input type="submit" value="Zapisz się"/>
+            </div>
+            <img src="img/peira.png"/>
+    </footer>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span><span class="sr-only">Zamknij</span>
+                </button>
+                <h3 class="modal-title" id="myModalLabel">Zapytaj o cenę</h3>
+            </div>
+            <div class="modal-body">
+                <div class="name-mail-phone">
+                    <input placeholder="Imię i nazwisko" type="text" />
+                    <input placeholder="Adres e-mail" type="mail" />
+                    <input placeholder="Numer telefonu" type="text" />
+                </div>
+                <textarea placeholder="Wiadomość"></textarea>
+                <label>
+                  <input type="checkbox" />
+                  <p>
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z Ustawą z dn. 29.08.1997 r. o ochronie danych osobowych, Dz. U. Nr 133 poz. 883. Administratorem danych jest Peira.
+                  </p>
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Wyślij wiadomość</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- build:js -->
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- endbuild  -->
+  </body>
+</html>
