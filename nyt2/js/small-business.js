@@ -47,7 +47,6 @@ function getNYT(beginDate, endDate){
   }).done(function(result) {
     hits = result.response.meta.hits/articlesPerSite;
     createArticles();
-    console.log(result);
     for (var i = 0; i < 10; i++) {
       $('#heading' + (round+i)).html(result.response.docs[''+i].headline.main);
       $('#paragraph' + (round+i)).html(result.response.docs[''+i].snippet);
