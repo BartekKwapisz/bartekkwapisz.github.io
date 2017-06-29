@@ -1,0 +1,37 @@
+h2 {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.pagination>li>a, .pagination>li>span {
+  min-width: 50px;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   opacity: 1;
+}
+
+.articles-per-site {
+  width: 50px;
+}
+
+.date-picker {
+  margin-right: 10px;
+  width: 125px;
+}
+
+input:invalid+span:after {
+  content: '✖';
+  margin-right: 10px;
+}
+
+input:valid+span:after {
+  content: '✓';
+  margin-right: 10px;
+}
